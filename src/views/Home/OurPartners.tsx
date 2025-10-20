@@ -21,8 +21,16 @@ const OurPartners = () => {
         Our Partners
       </Text>
       <Swiper
-        slidesPerView={4}
         spaceBetween={50}
+        slidesPerView={2}
+        breakpoints={{
+          620: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
         pagination={{
           clickable: true,
         }}

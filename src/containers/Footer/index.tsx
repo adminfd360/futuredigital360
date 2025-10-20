@@ -71,12 +71,16 @@ const Footer = () => {
       }}
     >
       <Section>
-        <div className="grid grid-cols-[40%_30%_30%] gap-12">
-          <div className="flex flex-col gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div className="flex flex-col gap-8 col-span-1 lg:col-span-5">
             <Link href="/">
-              <Image src={logo} alt="logo" className="w-[309px] h-auto" />
+              <Image
+                src={logo}
+                alt="logo"
+                className="w-[200px] lg:w-[309px] h-auto"
+              />
             </Link>
-            <Text className="pr-[50px]">
+            <Text className="2xl:pr-[50px]">
               Future Digital 360 empowers businesses with smart tech solutions
               in communication, IT, and security. We deliver trusted results and
               foster a culture of innovation. It is our vision to build a
@@ -85,7 +89,7 @@ const Footer = () => {
             <SocialMedias />
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-4">
             <Text
               variant="caption"
               className="pb-4 border-b-[1px] border-dotted mt-4"
@@ -128,7 +132,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-3">
             <Text
               variant="caption"
               className="pb-4 border-b-[1px] border-dotted mt-4"
@@ -164,7 +168,7 @@ const Footer = () => {
             <Text className="flex items-center gap-4 mt-6">
               <Image src={email} alt="email" className="w-[22px] h-auto" />
               <Link
-                className="text-brand-green"
+                className="text-brand-green max-2xl:break-all"
                 href="mailto:customercare@futuredigital360.com"
               >
                 customercare@futuredigital360.com

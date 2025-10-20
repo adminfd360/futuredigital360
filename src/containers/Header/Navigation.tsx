@@ -1,101 +1,72 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-
-type Navigation = {
-  label: string;
-  href: string;
-  hasSubMenu: boolean;
-  subMenu?: Navigation[];
-};
-
-const navigation: Navigation[] = [
-  {
-    label: "Home",
-    href: "/",
-    hasSubMenu: false,
-  },
-  {
-    label: "Services",
-    href: "",
-    hasSubMenu: true,
-    subMenu: [
-      {
-        label: "Communication Services",
-        href: "/services/communication",
-        hasSubMenu: false,
-      },
-      {
-        label: "Manage IT Network Services",
-        href: "/services/network",
-        hasSubMenu: false,
-      },
-
-      {
-        label: "Web Services",
-        href: "/services/web",
-        hasSubMenu: false,
-      },
-
-      {
-        label: "Cyber & Network Security Services",
-        href: "/services/cybersecurity",
-        hasSubMenu: false,
-      },
-
-      {
-        label: "Multi Function Product Services",
-        href: "/services/multi-functional",
-        hasSubMenu: false,
-      },
-    ],
-  },
-  {
-    label: "Support",
-    href: "",
-    hasSubMenu: true,
-    subMenu: [
-      {
-        label: "Frequently Asked Questions",
-        href: "/support/faq",
-        hasSubMenu: false,
-      },
-      {
-        label: "IFax FAQs",
-        href: "/support/ifax",
-        hasSubMenu: false,
-      },
-      {
-        label: "PDF Guides",
-        href: "/support/guides",
-        hasSubMenu: false,
-      },
-    ],
-  },
-  {
-    label: "Partners",
-    href: "/partners",
-    hasSubMenu: false,
-  },
-  {
-    label: "About Us",
-    href: "/about-us",
-    hasSubMenu: false,
-  },
-  {
-    label: "Contact Us",
-    href: "/contact-us",
-    hasSubMenu: false,
-  },
-];
+import NavigationMobile from "./NavigationMobile";
+import { cx } from "@/lib/utils";
+import { NavigationType } from "./navigation";
+import { navigation } from "./navigation";
 
 const Navigation = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  const isActive = (item: Navigation) => {
+  useEffect(() => {
+    if (open) {
+      // Store current scroll position
+      const scrollY = window.scrollY;
+
+      // Apply styles to prevent scrolling
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+
+      // Store scroll position for restoration
+      document.body.setAttribute("data-scroll-y", scrollY.toString());
+    } else {
+      // Get stored scroll position
+      const scrollY = document.body.getAttribute("data-scroll-y");
+
+      // Restore body styles
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY));
+        document.body.removeAttribute("data-scroll-y");
+      }
+    }
+
+    return () => {
+      // Cleanup function to ensure body styles are reset
+      const scrollY = document.body.getAttribute("data-scroll-y");
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY));
+        document.body.removeAttribute("data-scroll-y");
+      }
+    };
+  }, [open]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  const handleMenuClick = () => {
+    setOpen(!open);
+  };
+
+  const isActive = (item: NavigationType) => {
     if (item.href === "/" && pathname === "/") return true;
     if (item.href !== "/" && item.href !== "" && pathname.startsWith(item.href))
       return true;
@@ -107,7 +78,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul className="flex items-center gap-8 text-white uppercase font-semibold">
+      <ul className="items-center gap-4 xl:gap-8 text-white uppercase font-semibold hidden lg:flex">
         {navigation.map((item, index) => (
           <li
             key={index}
@@ -174,6 +145,34 @@ const Navigation = () => {
           </li>
         ))}
       </ul>
+      <div className="lg:hidden">
+        <NavigationMobile open={open} />
+      </div>
+      <div
+        className="flex lg:hidden items-center justify-center w-[35px] h-[35px] relative cursor-pointer"
+        onClick={handleMenuClick}
+      >
+        <div
+          className={cx(
+            "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 -translate-y-2.5 bg-white",
+            open &&
+              "[transform:translatex(3.5px)_rotate(-135deg)] w-[28px] -bottom-[20px]"
+          )}
+        ></div>
+        <div
+          className={cx(
+            "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 bg-white",
+            open && "scale-0"
+          )}
+        ></div>
+        <div
+          className={cx(
+            "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 translate-y-2.5 bg-white",
+            open &&
+              "[transform:translatex(3.5px)_rotate(135deg)] w-[28px] bottom-[20px]"
+          )}
+        ></div>
+      </div>
     </nav>
   );
 };

@@ -9,11 +9,14 @@ import whiteBanner from "./assets/white-bg.png";
 import Text from "@/components/Text";
 const Banner = () => {
   return (
-    <div className="w-full h-[934px] bg-gradient-to-r from-[#292dc2] to-[#0084e9]">
-      <Section className="relative z-10 !pt-48">
-        <div className="grid grid-cols-[45%_55%]">
-          <div className="flex flex-col gap-10 text-white">
-            <Text as={"h1"} className="font-bold text-5xl leading-[70px]">
+    <div className="relative w-full h-auto lg:h-[934px] bg-gradient-to-r from-[#292dc2] to-[#0084e9]">
+      <Section className="relative z-10 !pt-20 lg:!pt-48">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-[120px] xl:px-0">
+          <div className="flex flex-col gap-6 lg:gap-10 text-white order-2 lg:order-1">
+            <Text
+              as={"h1"}
+              className="font-bold text-2xl lg:text-5xl leading-[40px] lg:leading-[70px]"
+            >
               Complete Digital Solutions <br />
               Total Peace of Mind
             </Text>
@@ -46,16 +49,16 @@ const Banner = () => {
               label="Get a Free Quote"
             />
           </div>
-          <div>
+          <div className="order-1 lg:order-2">
             <Image
               src={infographic}
-              className="w-full max-w-[806px] h-auto relative -top-[56px]"
+              className="w-full max-w-[500px] lg:max-w-[806px] h-auto relative top-0 lg:-top-[56px] max-lg:m-auto"
               alt="infographic"
             />
           </div>
         </div>
       </Section>
-      <div className="absolute left-0 bottom-0 w-full h-full">
+      <div className="absolute left-0 bottom-0 w-full h-full hidden min-[1181px]:block">
         <Image src={whiteBanner} className="w-full h-full" alt="banner" />
       </div>
     </div>

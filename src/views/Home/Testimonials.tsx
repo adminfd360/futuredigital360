@@ -29,7 +29,15 @@ const Testimonials = () => {
 
         <Swiper
           pagination={true}
-          slidesPerView={3}
+          slidesPerView={1}
+          breakpoints={{
+            620: {
+              slidesPerView: 1.4,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
           loop={true}
           spaceBetween={50}
           modules={[Pagination, Autoplay]}

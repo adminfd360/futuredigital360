@@ -38,7 +38,11 @@ const stats: Stats[] = [
 const CompanyStats = () => {
   return (
     <div className="relative text-white">
-      <Image src={rocket} alt="rocket" className="absolute bottom-0 right-0" />
+      <Image
+        src={rocket}
+        alt="rocket"
+        className="absolute bottom-0 right-0 max-sm:w-[150px]"
+      />
       <div
         className="z-10 absolute top-0 right-0 w-full h-full bg-no-repeat bg-contain bg-center"
         style={{ backgroundImage: `url(${city.src})` }}
@@ -52,11 +56,11 @@ const CompanyStats = () => {
             Simplifying Growth for Your Business
           </Text>
 
-          <div className="flex mt-10 justify-around w-full">
+          <div className="flex mt-10 justify-around w-full max-lg:flex-wrap">
             {stats.map(({ title, description, suffix }, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-between items-center"
+                className="flex flex-col justify-between items-center max-lg:w-1/2 max-lg:mb-16"
               >
                 <CountUp
                   end={title}
