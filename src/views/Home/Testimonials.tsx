@@ -8,6 +8,7 @@ import qoute from "./assets/qoute.png";
 import avatar from "./assets/avatar.png";
 import fireworks from "./assets//fireworks.png";
 import Button from "@/components/Button";
+import AnimateDiv from "@/components/AnimateDiv";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -23,106 +24,108 @@ const Testimonials = () => {
         }}
       ></div>
       <Section className="z-20">
-        <Text className="text-white text-center" variant="subtitle">
-          Clients Testimonials
-        </Text>
+        <AnimateDiv>
+          <Text className="text-white text-center" variant="subtitle">
+            Clients Testimonials
+          </Text>
 
-        <Swiper
-          pagination={true}
-          slidesPerView={1}
-          breakpoints={{
-            620: {
-              slidesPerView: 1.4,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          loop={true}
-          spaceBetween={50}
-          modules={[Pagination, Autoplay]}
-          className="client-swiper mt-16 !pb-12"
-        >
-          <SwiperSlide>
-            <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
-              <Image src={qoute} alt="qoute" />
-              <Text>
-                Excepteur sint occaecat non proident, sunt in culpa qui officia
-                deserunt anim id est laborum anim.
-              </Text>
-              <div className="flex gap-3">
-                <Image src={avatar} alt="avatar" />
-                <div className="flex flex-col justify-center">
-                  <Text>John Doe</Text>
-                  <Text>CEO</Text>
+          <Swiper
+            pagination={true}
+            slidesPerView={1}
+            breakpoints={{
+              620: {
+                slidesPerView: 1.4,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            loop={true}
+            spaceBetween={50}
+            modules={[Pagination, Autoplay]}
+            className="client-swiper mt-16 !pb-12"
+          >
+            <SwiperSlide>
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+                <Image src={qoute} alt="qoute" />
+                <Text>
+                  Excepteur sint occaecat non proident, sunt in culpa qui
+                  officia deserunt anim id est laborum anim.
+                </Text>
+                <div className="flex gap-3">
+                  <Image src={avatar} alt="avatar" />
+                  <div className="flex flex-col justify-center">
+                    <Text>John Doe</Text>
+                    <Text>CEO</Text>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
-              <Image src={qoute} alt="qoute" />
-              <Text>
-                Excepteur sint occaecat non proident, sunt in culpa qui officia
-                deserunt anim id est laborum anim.
-              </Text>
-              <div className="flex gap-3">
-                <Image src={avatar} alt="avatar" />
-                <div className="flex flex-col justify-center">
-                  <Text>John Doe</Text>
-                  <Text>CEO</Text>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+                <Image src={qoute} alt="qoute" />
+                <Text>
+                  Excepteur sint occaecat non proident, sunt in culpa qui
+                  officia deserunt anim id est laborum anim.
+                </Text>
+                <div className="flex gap-3">
+                  <Image src={avatar} alt="avatar" />
+                  <div className="flex flex-col justify-center">
+                    <Text>John Doe</Text>
+                    <Text>CEO</Text>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
-              <Image src={qoute} alt="qoute" />
-              <Text>
-                Excepteur sint occaecat non proident, sunt in culpa qui officia
-                deserunt anim id est laborum anim.
-              </Text>
-              <div className="flex gap-3">
-                <Image src={avatar} alt="avatar" />
-                <div className="flex flex-col justify-center">
-                  <Text>John Doe</Text>
-                  <Text>CEO</Text>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+                <Image src={qoute} alt="qoute" />
+                <Text>
+                  Excepteur sint occaecat non proident, sunt in culpa qui
+                  officia deserunt anim id est laborum anim.
+                </Text>
+                <div className="flex gap-3">
+                  <Image src={avatar} alt="avatar" />
+                  <div className="flex flex-col justify-center">
+                    <Text>John Doe</Text>
+                    <Text>CEO</Text>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
-              <Image src={qoute} alt="qoute" />
-              <Text>
-                Excepteur sint occaecat non proident, sunt in culpa qui officia
-                deserunt anim id est laborum anim.
-              </Text>
-              <div className="flex gap-3">
-                <Image src={avatar} alt="avatar" />
-                <div className="flex flex-col justify-center">
-                  <Text>John Doe</Text>
-                  <Text>CEO</Text>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+                <Image src={qoute} alt="qoute" />
+                <Text>
+                  Excepteur sint occaecat non proident, sunt in culpa qui
+                  officia deserunt anim id est laborum anim.
+                </Text>
+                <div className="flex gap-3">
+                  <Image src={avatar} alt="avatar" />
+                  <div className="flex flex-col justify-center">
+                    <Text>John Doe</Text>
+                    <Text>CEO</Text>
+                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            </SwiperSlide>
+          </Swiper>
 
-        <div className="flex justify-center items-center gap-6 mt-8">
-          <Button
-            variant="primary"
-            label="Leave a Review"
-            href="/reviews/write-a-review"
-            className="tracking-widest text-sm px-6"
-          />
-          <Button
-            variant="secondary"
-            label="View all Reviews"
-            href="/reviews"
-            className="tracking-widest text-sm px-6"
-          />
-        </div>
+          <div className="flex justify-center items-center gap-6 mt-8">
+            <Button
+              variant="primary"
+              label="Leave a Review"
+              href="/reviews/write-a-review"
+              className="tracking-widest text-sm px-6"
+            />
+            <Button
+              variant="secondary"
+              label="View all Reviews"
+              href="/reviews"
+              className="tracking-widest text-sm px-6"
+            />
+          </div>
+        </AnimateDiv>
       </Section>
     </div>
   );

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Accordion from "@/components/Accordion";
 import chevron from "./assets/down-arrow.png";
 import mission from "./assets/mission.svg";
+import AnimateDiv from "@/components/AnimateDiv";
 
 type CompanyValues = {
   header: string;
@@ -31,27 +32,29 @@ const companyValues: CompanyValues[] = [
 const CompanyValues = () => {
   return (
     <Section className="bg-accent-100">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
-        <div>
-          <Text variant="subtitle">Who We Are and What We Stand For</Text>
+      <AnimateDiv>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-20">
+          <div>
+            <Text variant="subtitle">Who We Are and What We Stand For</Text>
 
-          <Accordion
-            items={companyValues.map(({ header, content }, index) => ({
-              header,
-              children: content,
-              initialEntered: index === 0,
-            }))}
-            chevronIcon={chevron}
-          />
+            <Accordion
+              items={companyValues.map(({ header, content }, index) => ({
+                header,
+                children: content,
+                initialEntered: index === 0,
+              }))}
+              chevronIcon={chevron}
+            />
+          </div>
+          <div className="">
+            <Image
+              src={mission}
+              alt="Mission"
+              className="w-full h-auto max-w-[620px] max-lg:m-auto lg:ml-auto"
+            />
+          </div>
         </div>
-        <div className="">
-          <Image
-            src={mission}
-            alt="Mission"
-            className="w-full h-auto max-w-[620px] max-lg:m-auto lg:ml-auto"
-          />
-        </div>
-      </div>
+      </AnimateDiv>
     </Section>
   );
 };
