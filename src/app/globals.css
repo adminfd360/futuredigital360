@@ -52,3 +52,29 @@ body {
 .all-unset {
   all: unset;
 }
+
+@keyframes gradient-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-500) 0%,
+    var(--color-brand-600) 20%,
+    #1a60c7 40%,
+    var(--color-brand-600) 60%,
+    #1a60c7 80%,
+    #292dc2 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-wave 8s ease-in-out infinite;
+}

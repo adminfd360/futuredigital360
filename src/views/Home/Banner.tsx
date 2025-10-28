@@ -11,7 +11,7 @@ import AnimateDiv from "@/components/AnimateDiv";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-auto lg:h-[934px] bg-gradient-to-r from-[#292dc2] to-[#0084e9]">
+    <div className="relative w-full h-auto lg:h-[934px] animate-gradient">
       <Section className="relative z-10 !pt-20 lg:!pt-48">
         <AnimateDiv>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-[120px] xl:px-0">
