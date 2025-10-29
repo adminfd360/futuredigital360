@@ -3,7 +3,7 @@ import PageBanner from "@/containers/PageBanner";
 const MultiFunctionalProducts = () => {
   return (
     <>
-      <PageBanner title="Multi Function Product Services" />
+      <PageBanner title="Multi Function Product" />
     </>
   );
 };

@@ -3,7 +3,7 @@ import PageBanner from "@/containers/PageBanner";
 const CyberSecurityServices = () => {
   return (
     <>
-      <PageBanner title="Cyber & Network Security Services" />
+      <PageBanner title="Cyber & Network Security" />
     </>
   );
 };

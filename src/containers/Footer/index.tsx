@@ -65,7 +65,7 @@ const Footer = () => {
 
   return (
     <footer
-      className="bg-[#f9f9f9] bg-no-repeat bg-contain bg-center"
+      className="bg-[#f9f9f9] bg-no-repeat bg-cover lg:bg-contain bg-center"
       style={{
         backgroundImage: `url(${bgMap.src})`,
       }}

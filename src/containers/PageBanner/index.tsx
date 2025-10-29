@@ -4,6 +4,7 @@ import Section from "@/components/Section";
 import banner from "./assets/banner-pages.webp";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import AnimateDiv from "@/components/AnimateDiv";
 
 type Props = {
   title: string;
@@ -27,38 +28,40 @@ const PageBanner = ({ title }: Props) => {
         className="flex items-center bg-cover bg-center bg-no-repeat min-h-auto lg:min-h-[364px] text-white"
         style={{ backgroundImage: `url(${banner.src})` }}
       >
-        <div className="w-full h-full mt-10">
-          <Text className="text-white" variant="hero">
-            {title}
-          </Text>
-          <nav className="mt-2" aria-label="Breadcrumb">
-            <span>
-              <Link className="text-gray-300 hover:text-sky-300" href="/">
-                Home
-              </Link>
-            </span>
-            {segments.map((segment, index) => {
-              const href = "/" + segments.slice(0, index + 1).join("/");
-              const isLast = index === segments.length - 1;
-              const label = toTitleCase(decodeURIComponent(segment));
-              return (
-                <span key={href}>
-                  <span className="w-4 h-4 bg-brand-500 inline-block rounded-full mx-3 relative top-[2px] after:absolute after:w-3 after:h-3 after:bg-white after:left-[-2px] after:rounded-full after:top-0 after:bottom-0 after:m-auto"></span>
-                  {isLast ? (
-                    <span className="text-white font-semibold">{label}</span>
-                  ) : (
-                    <Link
-                      className="text-gray-300 hover:text-sky-300"
-                      href={href}
-                    >
-                      {label}
-                    </Link>
-                  )}
-                </span>
-              );
-            })}
-          </nav>
-        </div>
+        <AnimateDiv>
+          <div className="w-full h-full mt-10">
+            <Text className="text-white" variant="hero">
+              {title}
+            </Text>
+            <nav className="mt-2" aria-label="Breadcrumb">
+              <span>
+                <Link className="text-gray-300 hover:text-sky-300" href="/">
+                  Home
+                </Link>
+              </span>
+              {segments.map((segment, index) => {
+                const href = "/" + segments.slice(0, index + 1).join("/");
+                const isLast = index === segments.length - 1;
+                const label = toTitleCase(decodeURIComponent(segment));
+                return (
+                  <span key={href}>
+                    <span className="w-4 h-4 bg-brand-500 inline-block rounded-full mx-3 relative top-[2px] after:absolute after:w-3 after:h-3 after:bg-white after:left-[-2px] after:rounded-full after:top-0 after:bottom-0 after:m-auto"></span>
+                    {isLast ? (
+                      <span className="text-white font-semibold">{label}</span>
+                    ) : (
+                      <Link
+                        className="text-gray-300 hover:text-sky-300"
+                        href={href}
+                      >
+                        {label}
+                      </Link>
+                    )}
+                  </span>
+                );
+              })}
+            </nav>
+          </div>
+        </AnimateDiv>
       </Section>
     </div>
   );

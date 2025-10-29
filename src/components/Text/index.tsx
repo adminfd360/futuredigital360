@@ -11,7 +11,7 @@ const Text = ({ variant = "body", children, className, as }: Props) => {
   const getVariantStyles = () => {
     switch (variant) {
       case "hero":
-        return "font-semibold text-[30px] lg:text-[45px] text-white";
+        return "font-semibold text-[20px] sm:text-[30px] lg:text-[45px] text-white";
       case "title":
         return "font-bold text-[36px] text-black";
       case "subtitle":
