@@ -1,7 +1,11 @@
-import React from "react";
+import PageBanner from "@/containers/PageBanner";
 
 const WebServices = () => {
-  return <div>WebServices</div>;
+  return (
+    <>
+      <PageBanner title="Web Services" />
+    </>
+  );
 };
 
 export default WebServices;

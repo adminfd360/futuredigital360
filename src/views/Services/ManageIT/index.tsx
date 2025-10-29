@@ -1,7 +1,11 @@
-import React from "react";
+import PageBanner from "@/containers/PageBanner";
 
 const ManageIT = () => {
-  return <div>ManageIT</div>;
+  return (
+    <>
+      <PageBanner title="Manage IT Network Services" />
+    </>
+  );
 };
 
 export default ManageIT;

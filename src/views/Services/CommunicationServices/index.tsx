@@ -1,7 +1,11 @@
-import React from "react";
+import PageBanner from "@/containers/PageBanner";
 
 const CommunicationServices = () => {
-  return <div>CommunicationServices</div>;
+  return (
+    <>
+      <PageBanner title="Communication Services" />
+    </>
+  );
 };
 
 export default CommunicationServices;

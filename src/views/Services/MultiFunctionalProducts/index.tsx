@@ -1,7 +1,11 @@
-import React from "react";
+import PageBanner from "@/containers/PageBanner";
 
 const MultiFunctionalProducts = () => {
-  return <div>MultiFunctionalProducts</div>;
+  return (
+    <>
+      <PageBanner title="Multi Function Product Services" />
+    </>
+  );
 };
 
 export default MultiFunctionalProducts;
