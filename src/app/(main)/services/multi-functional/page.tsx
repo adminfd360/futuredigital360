@@ -1,5 +1,7 @@
-const MultiFunctional = () => {
-  return <div>MultiFunctional</div>;
+import { MultiFunctionalProductsView } from "@/views/Services";
+
+const MultiFunctionalProducts = () => {
+  return <MultiFunctionalProductsView />;
 };
 
-export default MultiFunctional;
+export default MultiFunctionalProducts;

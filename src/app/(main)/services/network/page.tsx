@@ -1,5 +1,7 @@
+import { ManageITView } from "@/views/Services";
+
 const Networks = () => {
-  return <div>Networks</div>;
+  return <ManageITView />;
 };
 
 export default Networks;

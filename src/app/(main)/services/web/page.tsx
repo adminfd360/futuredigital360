@@ -1,5 +1,7 @@
-const Web = () => {
-  return <div>Web</div>;
+import { WebServicesView } from "@/views/Services";
+
+const WebServices = () => {
+  return <WebServicesView />;
 };
 
-export default Web;
+export default WebServices;

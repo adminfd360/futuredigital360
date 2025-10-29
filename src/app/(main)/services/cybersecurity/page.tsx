@@ -1,5 +1,7 @@
+import { CyberSecurityServicesView } from "@/views/Services";
+
 const Cybersecurity = () => {
-  return <div>Cybersecurity</div>;
+  return <CyberSecurityServicesView />;
 };
 
 export default Cybersecurity;

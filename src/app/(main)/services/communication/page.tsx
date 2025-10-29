@@ -1,5 +1,7 @@
+import { CommunicationServicesView } from "@/views/Services";
+
 const Communication = () => {
-  return <div>Communication</div>;
+  return <CommunicationServicesView />;
 };
 
 export default Communication;
