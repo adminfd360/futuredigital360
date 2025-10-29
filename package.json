@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@szhsin/react-accordion": "^1.4.1",
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
     "clsx": "^2.1.1",
     "motion": "^12.23.24",
     "next": "15.5.4",

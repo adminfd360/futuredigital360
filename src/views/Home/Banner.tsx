@@ -8,10 +8,12 @@ import infographic from "./assets/banner-infographic.png";
 import whiteBanner from "./assets/white-bg.png";
 import Text from "@/components/Text";
 import AnimateDiv from "@/components/AnimateDiv";
+import ParticlesApp from "@/lib/Particles";
 
 const Banner = () => {
   return (
     <div className="relative w-full h-auto lg:h-[934px] animate-gradient">
+      <ParticlesApp />
       <Section className="relative z-10 !pt-20 lg:!pt-48">
         <AnimateDiv>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-[120px] xl:px-0">
