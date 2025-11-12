@@ -1,4 +1,7 @@
+"use client";
+
 import * as motion from "motion/react-client";
+import { useEffect, useRef, useState } from "react";
 
 type AnimateDivProps = {
   children: React.ReactNode;
@@ -24,9 +27,47 @@ const createSlideUpVariants = (delay: number = 0) => ({
 });
 
 const AnimateDiv = ({ children, delay = 0, className }: AnimateDivProps) => {
+  const [isInView, setIsInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const checkInView = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        const windowHeight =
+          window.innerHeight || document.documentElement.clientHeight;
+        const threshold = windowHeight * 0.3; // 30% of viewport height
+        const isVisible =
+          rect.top < windowHeight - threshold && rect.bottom > threshold;
+
+        if (isVisible) {
+          setIsInView(true);
+        }
+      }
+    };
+
+    // Check immediately on mount
+    checkInView();
+
+    // Also check after a short delay to handle any layout shifts
+    const timeoutId = setTimeout(checkInView, 100);
+
+    // Check on scroll/resize as fallback
+    window.addEventListener("scroll", checkInView);
+    window.addEventListener("resize", checkInView);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", checkInView);
+      window.removeEventListener("resize", checkInView);
+    };
+  }, []);
+
   return (
     <motion.div
+      ref={ref}
       initial="offscreen"
+      animate={isInView ? "onscreen" : "offscreen"}
       whileInView="onscreen"
       viewport={{ amount: 0.3, once: false }}
       variants={createSlideUpVariants(delay)}
