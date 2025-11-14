@@ -1,5 +1,7 @@
+import { Guides as GuidesView } from "@/views/Faq";
+
 const Guides = () => {
-  return <div>Guides</div>;
+  return <GuidesView />;
 };
 
 export default Guides;

@@ -1,5 +1,7 @@
+import { IFax as IFaxView } from "@/views/Faq";
+
 const IFax = () => {
-  return <div>IFax</div>;
+  return <IFaxView />;
 };
 
 export default IFax;

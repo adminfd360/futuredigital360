@@ -46,7 +46,7 @@ const AccordionItem = ({
       className
     )}
     header={({ state: { isEnter } }) => (
-      <div className="flex items-center gap-4 relative w-full">
+      <div className="flex items-center gap-4 relative w-full ">
         {showNumber && (
           <span className="w-[34px] h-[34px] border-[1px] border-brand-500 rounded-full text-center flex justify-center items-center text-sm font-bold bg-white text-black">
             {index + 1}
@@ -68,7 +68,7 @@ const AccordionItem = ({
     buttonProps={{
       className: ({ isEnter }) =>
         cx(
-          "flex w-full p-3 pl-8 text-left cursor-pointer transition-all hover:bg-gradient-to-r hover:from-brand-500 hover:to-brand-600 hover:text-white hover:[&>div>img]:invert-100 hover:[&>div>img]:opacity-100",
+          "flex w-full p-3 lg:pl-8 text-left cursor-pointer transition-all hover:bg-gradient-to-r hover:from-brand-500 hover:to-brand-600 hover:text-white hover:[&>div>img]:invert-100 hover:[&>div>img]:opacity-100",
           isEnter && "bg-gradient-to-r from-brand-500 to-brand-600 text-white",
           buttonClassName
         ),

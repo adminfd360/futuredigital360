@@ -1,5 +1,7 @@
+import { FrequentlyAsk } from "@/views/Faq";
+
 const Faq = () => {
-  return <div>Faq</div>;
+  return <FrequentlyAsk />;
 };
 
 export default Faq;
