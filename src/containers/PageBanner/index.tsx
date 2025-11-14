@@ -5,12 +5,14 @@ import banner from "./assets/banner-pages.webp";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AnimateDiv from "@/components/AnimateDiv";
+import { StaticImageData } from "next/image";
 
 type Props = {
   title: string;
+  bannerImg?: StaticImageData | string;
 };
 
-const PageBanner = ({ title }: Props) => {
+const PageBanner = ({ title, bannerImg = banner.src }: Props) => {
   const pathname = usePathname();
   const segments = (pathname || "/").split("/").filter(Boolean);
 
@@ -26,7 +28,7 @@ const PageBanner = ({ title }: Props) => {
       <div className="w-full h-full absolute left-0 top-0 bg-gradient-to-r from-black/40 to-transparent"></div>
       <Section
         className="flex items-center bg-cover bg-center bg-no-repeat min-h-auto lg:min-h-[364px] text-white"
-        style={{ backgroundImage: `url(${banner.src})` }}
+        style={{ backgroundImage: `url(${bannerImg})` }}
       >
         <AnimateDiv>
           <div className="w-full h-full mt-10">

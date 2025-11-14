@@ -1,5 +1,7 @@
+import { TemplatesView } from "@/views/Services";
+
 const Templates = () => {
-  return <div>Templates</div>;
+  return <TemplatesView />;
 };
 
 export default Templates;
