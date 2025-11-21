@@ -46,9 +46,9 @@ const AccordionItem = ({
       className
     )}
     header={({ state: { isEnter } }) => (
-      <div className="flex items-center gap-4 relative w-full ">
+      <div className="flex items-center gap-4 relative w-full max-sm:pr-5">
         {showNumber && (
-          <span className="w-[34px] h-[34px] border-[1px] border-brand-500 rounded-full text-center flex justify-center items-center text-sm font-bold bg-white text-black">
+          <span className="w-[34px] h-[34px] border-[1px] border-brand-500 rounded-full text-center flex justify-center items-center text-sm font-bold bg-white text-black flex-shrink-0">
             {index + 1}
           </span>
         )}
