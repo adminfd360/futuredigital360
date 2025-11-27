@@ -16,16 +16,20 @@ const FrequentlyAsk = () => {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-12">
           <div className="col-span-1 lg:col-span-3">
-            <Image
-              className="mt-12 sticky top-20 max-sm:m-auto max-sm:w-auto max-sm:h-[150px] max-sm:object-contain"
-              src={faqMan}
-              alt="Frequently Ask Questions"
-            />
+            <AnimateDiv>
+              <Image
+                className="mt-12 sticky top-20 max-sm:m-auto max-sm:w-auto max-sm:h-[150px] max-sm:object-contain"
+                src={faqMan}
+                alt="Frequently Ask Questions"
+              />
+            </AnimateDiv>
           </div>
           <div className="col-span-1 lg:col-span-9">
-            <Text className="text-center" variant="title">
-              Most Popular Questions
-            </Text>
+            <AnimateDiv>
+              <Text className="text-center" variant="title">
+                Most Popular Questions
+              </Text>
+            </AnimateDiv>
             <Accordion
               items={frequentlyAskData.map(({ question, answer }, index) => ({
                 header: question,

@@ -1,5 +1,7 @@
+import PartnersView from "@/views/Partners";
+
 const Partners = () => {
-  return <div>Partners</div>;
+  return <PartnersView />;
 };
 
 export default Partners;
