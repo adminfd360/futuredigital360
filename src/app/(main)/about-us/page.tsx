@@ -1,5 +1,7 @@
+import { redirect } from "next/navigation";
+
 const AboutUs = () => {
-  return <div>AboutUs</div>;
+  return redirect("/about-us/company-overview");
 };
 
 export default AboutUs;

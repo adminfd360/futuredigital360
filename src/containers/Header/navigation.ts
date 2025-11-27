@@ -13,7 +13,7 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "Services",
-    href: "/services",
+    href: "",
     hasSubMenu: true,
     subMenu: [
       {
@@ -48,7 +48,7 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "Support",
-    href: "/support",
+    href: "",
     hasSubMenu: true,
     subMenu: [
       {
@@ -75,8 +75,20 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "About Us",
-    href: "/about-us",
-    hasSubMenu: false,
+    href: "",
+    hasSubMenu: true,
+    subMenu: [
+      {
+        label: "Company Overview",
+        href: "/about-us/company-overview",
+        hasSubMenu: false,
+      },
+      {
+        label: "Meet Our Leders",
+        href: "/about-us/meet-out-leaders",
+        hasSubMenu: false,
+      },
+    ],
   },
   {
     label: "Contact Us",

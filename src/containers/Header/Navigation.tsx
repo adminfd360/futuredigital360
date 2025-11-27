@@ -1,10 +1,10 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { cx } from "../../lib/utils";
 import NavigationMobile from "./NavigationMobile";
-import { cx } from "@/lib/utils";
 import { NavigationType } from "./navigation";
 import { navigation } from "./navigation";
 
@@ -78,7 +78,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul className="items-center gap-4 xl:gap-8 text-white uppercase font-semibold hidden lg:flex">
+      <ul className="items-center gap-4 xl:gap-6 text-white uppercase font-semibold hidden lg:flex">
         {navigation.map((item, index) => (
           <li
             key={index}
