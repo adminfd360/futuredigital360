@@ -9,7 +9,12 @@ const NavigationMobile = ({ open }: { open: boolean }) => {
 
   const isActive = (item: NavigationType) => {
     if (item.href === "/" && pathname === "/") return true;
-    if (item.href !== "/" && item.href !== "" && pathname.startsWith(item.href))
+    if (
+      item.href !== "/" &&
+      item.href !== "" &&
+      item.href !== "#" &&
+      pathname.startsWith(item.href)
+    )
       return true;
     if (item.hasSubMenu && item.subMenu) {
       return item.subMenu.some((subItem) => pathname === subItem.href);
@@ -27,16 +32,28 @@ const NavigationMobile = ({ open }: { open: boolean }) => {
       <ul className="flex flex-col gap-4 bg-sky-100 rounded-lg p-4">
         {navigation.map(({ label, href, hasSubMenu, subMenu }, index) => (
           <li key={index}>
-            <Link
-              className={cx(
-                "transition-colors duration-200",
-                isActive({ label, href, hasSubMenu, subMenu }) &&
-                  "text-brand-green font-bold"
-              )}
-              href={href}
-            >
-              {label}
-            </Link>
+            {hasSubMenu ? (
+              <span
+                className={cx(
+                  "transition-colors duration-200 font-semibold",
+                  isActive({ label, href, hasSubMenu, subMenu }) &&
+                    "text-brand-green font-bold"
+                )}
+              >
+                {label}
+              </span>
+            ) : (
+              <Link
+                className={cx(
+                  "transition-colors duration-200",
+                  isActive({ label, href, hasSubMenu, subMenu }) &&
+                    "text-brand-green font-bold"
+                )}
+                href={href}
+              >
+                {label}
+              </Link>
+            )}
             {hasSubMenu && (
               <ul className="flex flex-col gap-4 mt-3 bg-sky-50 rounded-lg p-4">
                 {subMenu?.map(({ label, href }, index) => (

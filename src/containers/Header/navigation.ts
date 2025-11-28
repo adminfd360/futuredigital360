@@ -13,7 +13,7 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "Services",
-    href: "",
+    href: "#",
     hasSubMenu: true,
     subMenu: [
       {
@@ -48,7 +48,7 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "Support",
-    href: "",
+    href: "#",
     hasSubMenu: true,
     subMenu: [
       {
@@ -75,7 +75,7 @@ export const navigation: NavigationType[] = [
   },
   {
     label: "About Us",
-    href: "",
+    href: "#",
     hasSubMenu: true,
     subMenu: [
       {

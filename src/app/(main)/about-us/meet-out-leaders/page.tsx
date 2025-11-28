@@ -1,5 +1,7 @@
+import MeetOurLeadersView from "@/views/About/MeetOurLeaders";
+
 const MeetOurLeaders = () => {
-  return <div>MeetOurLeaders</div>;
+  return <MeetOurLeadersView />;
 };
 
 export default MeetOurLeaders;

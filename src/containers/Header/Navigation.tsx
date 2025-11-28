@@ -68,7 +68,12 @@ const Navigation = () => {
 
   const isActive = (item: NavigationType) => {
     if (item.href === "/" && pathname === "/") return true;
-    if (item.href !== "/" && item.href !== "" && pathname.startsWith(item.href))
+    if (
+      item.href !== "/" &&
+      item.href !== "" &&
+      item.href !== "#" &&
+      pathname.startsWith(item.href)
+    )
       return true;
     if (item.hasSubMenu && item.subMenu) {
       return item.subMenu.some((subItem) => pathname === subItem.href);
@@ -86,20 +91,14 @@ const Navigation = () => {
             onMouseEnter={() => item.hasSubMenu && setOpenDropdown(item.label)}
             onMouseLeave={() => item.hasSubMenu && setOpenDropdown(null)}
           >
-            <Link
-              className={
-                item.hasSubMenu
-                  ? `flex items-center gap-1 hover:text-sky-200 transition-colors duration-500 ${
-                      isActive(item) ? "text-sky-200" : ""
-                    }`
-                  : `hover:text-sky-300 transition-colors duration-500 ${
-                      isActive(item) ? "text-sky-200" : ""
-                    }`
-              }
-              href={item.href}
-            >
-              {item.label}
-              {item.hasSubMenu && (
+            {item.hasSubMenu ? (
+              <button
+                className={`uppercase flex items-center gap-1 hover:text-sky-200 transition-colors duration-500 ${
+                  isActive(item) ? "text-sky-200" : ""
+                }`}
+                type="button"
+              >
+                {item.label}
                 <svg
                   className={`w-4 h-4 transition-transform duration-200 ${
                     openDropdown === item.label ? "rotate-180" : ""
@@ -115,8 +114,17 @@ const Navigation = () => {
                     d="M19 9l-7 7-7-7"
                   />
                 </svg>
-              )}
-            </Link>
+              </button>
+            ) : (
+              <Link
+                className={`hover:text-sky-300 transition-colors duration-500 ${
+                  isActive(item) ? "text-sky-200" : ""
+                }`}
+                href={item.href}
+              >
+                {item.label}
+              </Link>
+            )}
 
             {/* Dropdown Menu */}
             {item.hasSubMenu && item.subMenu && (
