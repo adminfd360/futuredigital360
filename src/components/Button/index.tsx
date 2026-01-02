@@ -7,6 +7,7 @@ type ButtonProps = {
   className?: string;
   href?: string;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -15,6 +16,7 @@ const Button = ({
   className: customClassName,
   href,
   onClick,
+  disabled = false,
 }: ButtonProps) => {
   const className = cx(
     "w-auto border rounded-sm px-3 py-3 text-center font-semibold inline-block cursor-pointer transition-all duration-300",
@@ -36,7 +38,7 @@ const Button = ({
   }
 
   return (
-    <button className={cx(className)} onClick={onClick}>
+    <button className={cx(className)} onClick={onClick} disabled={disabled}>
       {label}
     </button>
   );

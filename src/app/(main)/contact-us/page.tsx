@@ -1,5 +1,7 @@
+import ContactUsView from "@/views/Contact";
+
 const ContactUs = () => {
-  return <div>ContactUs</div>;
+  return <ContactUsView />;
 };
 
 export default ContactUs;

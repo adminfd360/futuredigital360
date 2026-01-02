@@ -49,7 +49,7 @@ const Banner = () => {
               </div>
               <Button
                 className="max-w-[213px]"
-                onClick={() => {}}
+                href="contact-us#contact-form"
                 variant="outline"
                 label="Get a Free Quote"
               />
