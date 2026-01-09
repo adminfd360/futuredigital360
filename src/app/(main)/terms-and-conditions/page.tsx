@@ -1,7 +1,7 @@
-import React from "react";
+import TermsAndConditionsView from "@/views/TermsAndConditions";
 
 const TermsAndConditions = () => {
-  return <div>TermsAndConditions</div>;
+  return <TermsAndConditionsView />;
 };
 
 export default TermsAndConditions;

@@ -10,6 +10,8 @@ import Text from "@/components/Text";
 import AnimateDiv from "@/components/AnimateDiv";
 import ParticlesApp from "@/lib/Particles";
 
+import logo from "./assets/logo.webp";
+
 const Banner = () => {
   return (
     <div className="relative w-full h-auto lg:h-[934px] animate-gradient">
@@ -54,11 +56,16 @@ const Banner = () => {
                 label="Get a Free Quote"
               />
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 relative">
               <Image
                 src={infographic}
                 className="w-full max-w-[500px] lg:max-w-[806px] h-auto relative top-0 lg:-top-[56px] max-lg:m-auto"
                 alt="infographic"
+              />
+              <Image
+                src={logo}
+                className="absolute bottom-[201px] right-[71px] w-[65px] h-auto drop-shadow-xl [transform:perspective(998px)_rotateY(-43deg)_rotateX(16deg)_rotateZ(-4.5deg)_skewX(-4deg)] [transform-origin:center]"
+                alt="logo"
               />
             </div>
           </div>

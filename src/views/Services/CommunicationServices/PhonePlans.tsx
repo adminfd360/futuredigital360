@@ -145,7 +145,7 @@ const PhonePlans = () => {
               <Button
                 variant="primary"
                 label="Get a Free Quote"
-                href="/"
+                href="/contact-us#contact-form"
                 className="tracking-widest text-sm px-6 w-full mt-7 hover:bg-brand-500 hover:text-white"
               />
             </div>
