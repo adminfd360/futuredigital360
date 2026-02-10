@@ -84,9 +84,9 @@ const Navigation = () => {
   return (
     <nav>
       <ul className="items-center gap-4 xl:gap-6 text-white uppercase font-semibold hidden lg:flex">
-        {navigation.map((item, index) => (
+        {navigation.map((item) => (
           <li
-            key={index}
+            key={item.label}
             className={item.hasSubMenu ? "relative" : ""}
             onMouseEnter={() => item.hasSubMenu && setOpenDropdown(item.label)}
             onMouseLeave={() => item.hasSubMenu && setOpenDropdown(null)}
@@ -115,6 +115,18 @@ const Navigation = () => {
                   />
                 </svg>
               </button>
+            ) : item.href.startsWith("http") ? (
+              <a
+                className={`hover:text-sky-300 transition-colors duration-500 ${
+                  isActive(item) ? "text-sky-200" : ""
+                }`}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                suppressHydrationWarning
+              >
+                {item.label}
+              </a>
             ) : (
               <Link
                 className={`hover:text-sky-300 transition-colors duration-500 ${

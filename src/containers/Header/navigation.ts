@@ -91,6 +91,11 @@ export const navigation: NavigationType[] = [
     ],
   },
   {
+    label: "Blogs",
+    href: "https://blogs.futuredigital360.com",
+    hasSubMenu: false,
+  },
+  {
     label: "Contact Us",
     href: "/contact-us",
     hasSubMenu: false,

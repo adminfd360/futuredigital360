@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 
 import yealink from "../Home/assets/partners/yealink.webp";
@@ -17,6 +17,7 @@ import Text from "@/components/Text";
 import AnimateDiv from "@/components/AnimateDiv";
 
 import "swiper/css";
+import "swiper/css/navigation";
 
 const Partners = () => {
   return (
@@ -43,7 +44,8 @@ const Partners = () => {
             pagination={{
               clickable: true,
             }}
-            modules={[Autoplay]}
+            navigation
+            modules={[Autoplay, Navigation]}
             autoplay={{
               delay: 2500,
               disableOnInteraction: false,

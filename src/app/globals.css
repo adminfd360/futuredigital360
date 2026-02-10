@@ -79,3 +79,29 @@ body {
   background-size: 200% 200%;
   animation: gradient-wave 8s ease-in-out infinite;
 }
+
+.glow_white {
+  animation: 2s linear 0s infinite normal none running glow_ffffff_2;
+}
+
+@keyframes glow_ffffff_2 {
+  0% {
+    box-shadow: none;
+  }
+
+  37.5% {
+    box-shadow: none;
+  }
+
+  50% {
+    box-shadow: 0 0 8px 5px #fff;
+  }
+
+  62.5% {
+    box-shadow: none;
+  }
+
+  to {
+    box-shadow: none;
+  }
+}

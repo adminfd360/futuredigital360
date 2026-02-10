@@ -9,12 +9,22 @@ import whiteBanner from "./assets/white-bg.png";
 import Text from "@/components/Text";
 import AnimateDiv from "@/components/AnimateDiv";
 import ParticlesApp from "@/lib/Particles";
+import Ribbon from "@/components/Ribbon";
 
 import logo from "./assets/logo.webp";
 
 const Banner = () => {
   return (
     <div className="relative w-full h-auto lg:h-[934px] animate-gradient">
+      <div className="hidden absolute right-0 bottom-3/12 z-50 lg:flex flex-col items-end gap-2">
+        <a href="https://webservices.futuredigital360.com/" target="_blank">
+          <Ribbon text="Web Service Bill Pay" />
+        </a>
+        <a href="https://futuredigital360.billcenter.net/" target="_blank">
+          <Ribbon backgroundColor="#007D62" text="Customer Bill Pay" />
+        </a>
+      </div>
+
       <ParticlesApp />
       <Section className="relative z-10 !pt-20 lg:!pt-48">
         <AnimateDiv>

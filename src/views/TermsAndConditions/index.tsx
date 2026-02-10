@@ -28,13 +28,14 @@ interface TermsItem {
   _createdAt: string;
 }
 
-const TERMS_QUERY = `*[_type == "termsAndConditions"] | order(_createdAt asc){
-  _id,
-  title,
-  isActive,
-  content,
-  _createdAt
-}`;
+const TERMS_QUERY = `*[_type == "termsAndConditions"] | order(order asc) {
+                      _id,
+                        order,
+                        title,
+                        isActive,
+                        content,
+                        _createdAt
+                      }`;
 
 const TermsAndConditions = () => {
   const [termsData, setTermsData] = useState<TermsItem[]>([]);
@@ -51,7 +52,7 @@ const TermsAndConditions = () => {
       } catch (err) {
         console.error("Error fetching terms data:", err);
         setError(
-          "Failed to load terms and conditions. Please try again later."
+          "Failed to load terms and conditions. Please try again later.",
         );
       } finally {
         setLoading(false);

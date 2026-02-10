@@ -14,7 +14,7 @@ type Stats = {
 
 const stats: Stats[] = [
   {
-    title: 15,
+    title: 39,
     suffix: "+",
     description: "Experience Years",
   },

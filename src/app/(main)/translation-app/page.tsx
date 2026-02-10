@@ -1,5 +1,7 @@
+import TranslationAppView from "@/views/TranslationApp";
+
 const TranslationApp = () => {
-  return <div>TranslationApp</div>;
+  return <TranslationAppView />;
 };
 
 export default TranslationApp;

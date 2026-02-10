@@ -9,6 +9,7 @@ import avatar from "./assets/avatar.png";
 import fireworks from "./assets//fireworks.png";
 import Button from "@/components/Button";
 import AnimateDiv from "@/components/AnimateDiv";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -40,78 +41,84 @@ const Testimonials = () => {
                 slidesPerView: 3,
               },
             }}
-            loop={true}
+            // loop={true}
             spaceBetween={50}
             modules={[Pagination, Autoplay]}
             className="client-swiper mt-16 !pb-12"
           >
             <SwiperSlide>
-              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6 min-h-[267px] justify-between">
                 <Image src={qoute} alt="qoute" />
                 <Text>
-                  Excepteur sint occaecat non proident, sunt in culpa qui
-                  officia deserunt anim id est laborum anim.
+                  Signed up with Future Digital for our phone system all the way
+                  from Wisconsin and we have loved everything about them.
+                  <Link
+                    className="text-brand-500"
+                    target="_blank"
+                    href="https://share.google/xm3rdEtE2oZbozvcD"
+                  >
+                    ...Read more
+                  </Link>
                 </Text>
                 <div className="flex gap-3">
                   <Image src={avatar} alt="avatar" />
                   <div className="flex flex-col justify-center">
-                    <Text>John Doe</Text>
-                    <Text>CEO</Text>
+                    <Text>Jerry Arenas</Text>
+                    {/* <Text>CEO</Text> */}
                   </div>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6 min-h-[267px] justify-between">
                 <Image src={qoute} alt="qoute" />
                 <Text>
-                  Excepteur sint occaecat non proident, sunt in culpa qui
-                  officia deserunt anim id est laborum anim.
+                  I have been a customer of Future Digital for several years. I
+                  love how they handle my issues in a timely manner.
+                  <Link
+                    className="text-brand-500"
+                    target="_blank"
+                    href="https://share.google/RfpSd9sxvg9nh0sCR"
+                  >
+                    ...Read more
+                  </Link>
                 </Text>
                 <div className="flex gap-3">
                   <Image src={avatar} alt="avatar" />
                   <div className="flex flex-col justify-center">
-                    <Text>John Doe</Text>
-                    <Text>CEO</Text>
+                    <Text>Chosen Auto Sales</Text>
+                    {/* <Text>CEO</Text> */}
                   </div>
                 </div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
+              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6 min-h-[267px] justify-between">
                 <Image src={qoute} alt="qoute" />
                 <Text>
-                  Excepteur sint occaecat non proident, sunt in culpa qui
-                  officia deserunt anim id est laborum anim.
+                  Your representatives listened to the issues I was having with
+                  our printer from the first contact by phone to the onsite
+                  visit, and they resolved the matter quickly.
+                  <Link
+                    className="text-brand-500"
+                    target="_blank"
+                    href="https://share.google/9FWnSfTbRWAmgNTPs"
+                  >
+                    ...Read more
+                  </Link>
                 </Text>
                 <div className="flex gap-3">
                   <Image src={avatar} alt="avatar" />
                   <div className="flex flex-col justify-center">
-                    <Text>John Doe</Text>
-                    <Text>CEO</Text>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="flex flex-col gap-6 bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.05)] rounded-md py-4 px-6">
-                <Image src={qoute} alt="qoute" />
-                <Text>
-                  Excepteur sint occaecat non proident, sunt in culpa qui
-                  officia deserunt anim id est laborum anim.
-                </Text>
-                <div className="flex gap-3">
-                  <Image src={avatar} alt="avatar" />
-                  <div className="flex flex-col justify-center">
-                    <Text>John Doe</Text>
-                    <Text>CEO</Text>
+                    <Text>Michele Newcomb</Text>
+                    {/* <Text>CEO</Text> */}
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           </Swiper>
 
-          <div className="flex justify-center items-center gap-6 mt-8">
+          {/* <div className="flex justify-center items-center gap-6 mt-8">
             <Button
               variant="primary"
               label="Leave a Review"
@@ -124,7 +131,7 @@ const Testimonials = () => {
               href="/reviews"
               className="tracking-widest text-sm px-6"
             />
-          </div>
+          </div> */}
         </AnimateDiv>
       </Section>
     </div>

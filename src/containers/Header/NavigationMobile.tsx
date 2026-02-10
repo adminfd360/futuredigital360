@@ -42,6 +42,19 @@ const NavigationMobile = ({ open }: { open: boolean }) => {
               >
                 {label}
               </span>
+            ) : href.startsWith("http") ? (
+              <a
+                className={cx(
+                  "transition-colors duration-200",
+                  isActive({ label, href, hasSubMenu, subMenu }) &&
+                    "text-brand-green font-bold"
+                )}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {label}
+              </a>
             ) : (
               <Link
                 className={cx(
