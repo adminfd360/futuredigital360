@@ -48,13 +48,13 @@ const Banner = () => {
               <div>
                 <Text>
                   Customer Service:{" "}
-                  <Link className="underline" href="8555533360">
+                  <Link className="underline" href="tel:8555533360">
                     855.55-FD360 (3.3360)
                   </Link>
                 </Text>
                 <Text className="mt-2">
                   Technical Support:{" "}
-                  <Link className="underline" href="4808096328">
+                  <Link className="underline" href="tel:4808096328">
                     480.809.6328
                   </Link>
                 </Text>

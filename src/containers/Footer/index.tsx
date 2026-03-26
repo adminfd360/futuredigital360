@@ -151,7 +151,7 @@ const Footer = () => {
               />
               <span className="flex flex-col">
                 Customer Service:
-                <Link className="text-brand-green" href="8555533360">
+                <Link className="text-brand-green" href="tel:8555533360">
                   855.55-FD360 (3.3360)
                 </Link>
               </span>
@@ -160,7 +160,7 @@ const Footer = () => {
               <Image src={phone} alt="phone" className="w-[22px] h-auto " />
               <span className="flex gap-2">
                 Tech Support:
-                <Link className="text-brand-green" href="4808096328">
+                <Link className="text-brand-green" href="tel:4808096328">
                   480.809.6328
                 </Link>
               </span>
@@ -177,10 +177,25 @@ const Footer = () => {
           </div>
         </div>
       </Section>
-      <div className="flex items-center justify-center w-full h-[50px] bg-brand-700">
-        <Text className="text-center text-white text-xs">
-          © Copyright 2025 by Future Digital 360. All Rights Reserved.
-        </Text>
+      <div className="flex items-center w-full h-auto sm:h-[50px] bg-brand-700">
+        <div className="w-full max-w-[1500px] px-4 py-4 sm:py-0 flex justify-between m-auto sm:flex-row flex-col gap-4">
+          <Text className="text-center text-white text-xs sm:text-sm">
+            © Copyright {new Date().getFullYear()} by Future Digital 360. All
+            Rights Reserved.
+          </Text>
+          <Text className="text-center text-white text-xs sm:text-sm">
+            <Link
+              href="/terms-of-service"
+              className="text-white hover:underline"
+            >
+              Terms of Service
+            </Link>
+            {"  |  "}
+            <Link href="/privacy-policy" className="text-white hover:underline">
+              Privacy Policy
+            </Link>
+          </Text>
+        </div>
       </div>
     </footer>
   );
