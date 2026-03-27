@@ -11,10 +11,10 @@ const CompanyOverview = () => {
     <>
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
-          <div>
-            <AnimateDiv>
+          <div className="flex justify-center items-center">
+            <AnimateDiv className="w-full">
               <Image
-                className="w-full h-auto max-w-[350px] m-auto lg:max-w-[500px]"
+                className="w-full object-cover max-w-[420px] m-auto"
                 src={legacy}
                 alt="Our Legacy of Innovation"
               />
@@ -55,9 +55,9 @@ const CompanyOverview = () => {
       <Section className="bg-accent-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
           <div className="order-2 flex justify-center items-center">
-            <AnimateDiv>
+            <AnimateDiv className="w-full">
               <Image
-                className="w-full h-auto max-w-[550px] m-auto"
+                className="w-full object-cover max-w-[500px] m-auto"
                 src={technology}
                 alt="Our Legacy of Innovation"
               />
@@ -106,7 +106,7 @@ const CompanyOverview = () => {
       <Section>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
           <div className="order-2 lg:order-1">
-            <AnimateDiv>
+            <AnimateDiv className="wfull">
               <Image
                 className="w-full h-auto max-w-[500px] m-auto"
                 src={veteran}

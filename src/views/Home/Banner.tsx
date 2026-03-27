@@ -16,7 +16,7 @@ import logo from "./assets/logo.webp";
 const Banner = () => {
   return (
     <div className="relative w-full h-auto lg:h-[934px] animate-gradient">
-      <div className="hidden absolute right-0 bottom-3/12 z-50 lg:flex flex-col items-end gap-2">
+      <div className="hidden absolute right-0 bottom-1/12 z-50 lg:flex flex-col items-end gap-2">
         <a href="https://webservices.futuredigital360.com/" target="_blank">
           <Ribbon text="Web Service Bill Pay" />
         </a>

@@ -20,7 +20,7 @@ const Guides = () => {
             {pdfs.map(({ img, name, path }, index) => (
               <AnimateDiv key={index}>
                 <div className="shadow-lg relative p-6 pb-16 lg:min-h-[700px] hover:scale-105 transition-all duration-300 flex items-center flex-col bg-white">
-                  <Link target="_blank" href={path}>
+                  <Link className="w-full" target="_blank" href={path}>
                     <Image
                       className="w-full h-auto max-w-[400px] m-auto object-cover"
                       src={img}
