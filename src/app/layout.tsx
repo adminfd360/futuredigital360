@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: {
     default:
       "VoIP, IT Services, Web Design & Hosting in Scottsdale | Future Digital 360",
-    template: "%s | Future Digital 36",
+    template: "%s | Future Digital 360",
   },
 
   description:
