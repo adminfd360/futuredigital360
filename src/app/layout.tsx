@@ -9,80 +9,109 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://futuredigital360.com"),
+
   title: {
-    default: "Future Digital 360 | Complete Digital Solutions, Total Peace of Mind",
-    template: "%s | Future Digital 360",
+    default:
+      "VoIP, IT Services, Web Design & Hosting in Scottsdale | Future Digital 360",
+    template: "%s | Future Digital 36",
   },
+
   description:
-    "Future Digital 360 delivers complete digital business solutions including VoIP communication, managed IT network services, cybersecurity, web design, and multifunction products. Serving businesses since 1986 from Scottsdale, Arizona.",
+    "Future Digital 360 provides VoIP phone systems, managed IT services, cybersecurity, web design, web hosting, and digital solutions in Scottsdale & Phoenix, Arizona. Trusted since 1986.",
+
   keywords: [
-    "Future Digital 360",
-    "FD360",
-    "business technology solutions",
-    "VoIP phone systems",
-    "managed IT services",
-    "cybersecurity",
-    "web design",
-    "multifunction printers",
-    "Scottsdale Arizona",
-    "cloud PBX",
-    "business communication",
-    "IT support",
-    "network security",
-    "office equipment",
-    "telecommunications",
-    "telecom company",
-    "telecommunication engineering",
-    "telecommunications companies",
-    "web services",
-    "phone service",
-    "domain",
-    "fax machines",
-    "xerox machine",
-    "copier",
-    "Professional Telephone Solutions Scottsdale",
-    "Professional Telephone Solutions Phoenix",
+    // Core services
     "VoIP Scottsdale",
     "VoIP Phoenix",
-    "Lexmark Scottsdale",
-    "Lexmark Phoenix",
-    "Multi Function Printer Scottsdale",
-    "Multi Function Printer Phoenix",
-    "MFP Scottsdale",
-    "MFP Phoenix",
-    "Arizona 85258",
+    "business phone systems Arizona",
+    "cloud PBX solutions",
+
+    // IT + security
+    "managed IT services Scottsdale",
+    "IT support Phoenix",
+    "cybersecurity services Arizona",
+    "network security services",
+
+    // Web services (NEW - optimized)
+    "web design Scottsdale",
+    "web design Phoenix",
+    "website development Arizona",
+    "web hosting Scottsdale",
+    "web hosting Phoenix",
+    "business website services",
+    "website maintenance services",
+
+    // Supporting
+    "office printers Scottsdale",
+    "multifunction printers Phoenix",
+    "business technology solutions",
+
+    // Brand
+    "Future Digital 360",
+    "FD360",
   ],
+
   authors: [{ name: "Future Digital 360" }],
   creator: "Future Digital 360",
-  metadataBase: new URL("https://futuredigital360.com"),
+
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
+    url: "https://futuredigital360.com",
     siteName: "Future Digital 360",
-    title: "Future Digital 360 | Complete Digital Solutions, Total Peace of Mind",
+    title:
+      "VoIP, IT Services, Web Design & Hosting in Scottsdale | Future Digital 360",
     description:
-      "Future Digital 360 delivers complete digital business solutions including VoIP communication, managed IT services, cybersecurity, web design, and multifunction products since 1986.",
+      "Business VoIP, IT support, cybersecurity, web design, and web hosting solutions in Scottsdale and Phoenix. Serving Arizona since 1986.",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Future Digital 360 Web, IT & VoIP Services",
+      },
+    ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Future Digital 360 | Complete Digital Solutions",
+    title:
+      "VoIP, IT Services, Web Design & Hosting | Future Digital 360",
     description:
-      "Complete digital business solutions: VoIP, IT services, cybersecurity, web design & more. Serving businesses since 1986.",
+      "Complete digital solutions: VoIP, IT, cybersecurity, web design & hosting in Arizona.",
+    images: ["/og-image.jpg"],
   },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+
+  category: "technology",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${poppins.variable} antialiased`}>{children}</body>
+    <html lang="en">
+      <body className={`${poppins.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
