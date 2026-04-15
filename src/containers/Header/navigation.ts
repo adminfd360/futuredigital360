@@ -16,11 +16,11 @@ export const navigation: NavigationType[] = [
     href: "#",
     hasSubMenu: true,
     subMenu: [
-      {
-        label: "Communication Services",
-        href: "/services/communication",
-        hasSubMenu: false,
-      },
+      // {
+      //   label: "Communication Services",
+      //   href: "/services/communication",
+      //   hasSubMenu: false,
+      // },
       {
         label: "Manage IT Network Services",
         href: "/services/network",

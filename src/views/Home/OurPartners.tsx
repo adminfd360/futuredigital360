@@ -4,6 +4,7 @@ import { Autoplay } from "swiper/modules";
 import Section from "@/components/Section";
 import Text from "@/components/Text";
 import Image from "next/image";
+import Link from "next/link";
 
 import yealink from "./assets/partners/yealink.webp";
 import yeastar from "./assets/partners/yeastar.webp";
@@ -12,6 +13,7 @@ import lexmark from "./assets/partners/lexmark.webp";
 import googlePartner from "./assets/partners/google.webp";
 import microsoft from "./assets/partners/mssoft.webp";
 import AnimateDiv from "@/components/AnimateDiv";
+import va360 from "./assets/partners/va360logo.png";
 
 import "swiper/css";
 
@@ -45,6 +47,11 @@ const OurPartners = () => {
         >
           <SwiperSlide className="!flex justify-between items-center !h-[134px]">
             <Image src={yealink} alt="yealink" />
+          </SwiperSlide>
+          <SwiperSlide className="!flex justify-between items-center !h-[134px]">
+            <Link href="https://www.va360.us/" target="_blank">
+              <Image className="w-full h-auto" src={va360} alt="VA360" />
+            </Link>
           </SwiperSlide>
           <SwiperSlide className="!flex justify-between items-center !h-[134px]">
             <Image src={yeastar} alt="yeastart" />

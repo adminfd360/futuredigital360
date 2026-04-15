@@ -38,10 +38,10 @@ const links: Link[] = [
     label: "Contact Us",
     url: "/contact-us",
   },
-  {
-    label: "Communication Services",
-    url: "/services/communication",
-  },
+  // {
+  //   label: "Communication Services",
+  //   url: "/services/communication",
+  // },
   {
     label: "Manage IT Network",
     url: "/services/network",
@@ -57,6 +57,10 @@ const links: Link[] = [
   {
     label: "Multi Function Product",
     url: "/services/multi-functional",
+  },
+  {
+    label: "Web Templates",
+    url: "/services/web/templates",
   },
 ];
 
