@@ -15,6 +15,7 @@ type ContactFormInputs = {
   inquiry: string;
   marketingConsent: boolean;
   smsConsent: boolean;
+  smsDisclosureConsent: boolean;
 };
 
 const inputClass = (hasError: boolean) =>
@@ -46,8 +47,9 @@ const Form = () => {
           message: data.inquiry,
           email_marketing_opt_in: data.marketingConsent ? "Yes" : "No",
           sms_opt_in: data.smsConsent ? "Yes" : "No",
+          sms_disclosure_consent: data.smsDisclosureConsent ? "Yes" : "No",
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
 
       alert("Thank you for contacting us! We will get back to you soon.");
@@ -304,6 +306,34 @@ const Form = () => {
             <span className="text-sm text-gray-600">
               I want to receive optional SMS messages from Future Digital 360 as
               described above (not required to submit this form).
+            </span>
+          </label>
+
+          <label className="flex items-start gap-3 cursor-pointer">
+            <input
+              type="checkbox"
+              {...register("smsDisclosureConsent")}
+              className="mt-1 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary"
+            />
+            <span className="text-sm text-gray-600">
+              By checking this box, I consent to receive SMS from Future Digital
+              360. Reply<strong> STOP</strong> to opt-out; Reply
+              <strong> HELP</strong> for support; Message & data rates may
+              apply; Messaging frequency may vary. View our{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-brand-500 underline hover:text-primary/80"
+              >
+                Privacy Policy
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/terms-of-service"
+                className="text-brand-500 underline hover:text-primary/80"
+              >
+                Terms of Service
+              </Link>
+              .
             </span>
           </label>
         </div>
