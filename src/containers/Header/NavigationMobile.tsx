@@ -1,4 +1,4 @@
-import { navigation, NavigationType } from "./navigation";
+import { navigation, NavigationType } from "./navigationData";
 
 import Link from "next/link";
 import { cx } from "@/lib/utils";

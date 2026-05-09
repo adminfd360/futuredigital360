@@ -17,6 +17,7 @@ type AccordionItemProps = {
   buttonClassName?: string;
   contentClassName?: string;
   panelClassName?: string;
+  id?: string;
 };
 
 type AccordionProps = {
@@ -37,10 +38,12 @@ const AccordionItem = ({
   buttonClassName,
   contentClassName,
   panelClassName,
+  id,
   ...rest
 }: AccordionItemProps) => (
   <BaseItem
     {...rest}
+    {...(id ? { id } : {})}
     className={cx(
       "border-b-[1px] border-brand-500/40 border-dotted",
       className

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { IFax as IFaxView } from "@/views/Faq";
 
 export const metadata: Metadata = {
@@ -23,7 +24,11 @@ export const metadata: Metadata = {
 };
 
 const IFax = () => {
-  return <IFaxView />;
+  return (
+    <Suspense>
+      <IFaxView />
+    </Suspense>
+  );
 };
 
 export default IFax;

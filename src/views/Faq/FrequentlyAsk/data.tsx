@@ -19,18 +19,35 @@ import linkusDownload15 from "../assets/linkus/linkusdownload-15.jpg";
 import linkusDownload16 from "../assets/linkus/linkusdownload-16.jpg";
 import linkusDownload17 from "../assets/linkus/linkusdownload-17.jpg";
 
-type FrequentlyAskData = {
+export type FrequentlyAskData = {
+  /** Stable URL-safe id used for deep-linking (`/support/faq#<slug>`) and search indexing. */
+  slug: string;
   question: string;
   answer: string | ReactNode;
+  /** Plain-text version of the answer used by the search index. Falls back to a stripped string of `answer` when omitted. */
+  searchText?: string;
+  /** Additional aliases / synonyms to widen the match surface. */
+  keywords?: string[];
 };
 
 export const frequentlyAskData: FrequentlyAskData[] = [
   {
+    slug: "transfer-calls-to-voicemail",
     question: "How to transfer calls straight to voicemail?",
     answer:
       "Press the dial ** + desired extension (for example **1002) Then press the B TRANSFER key. By doing this, the caller should hear a voicemail prompt and should be able to leave a voicemail. ",
+    keywords: [
+      "voicemail",
+      "transfer call",
+      "call transfer",
+      "extension",
+      "voip",
+      "phone",
+      "blind transfer",
+    ],
   },
   {
+    slug: "linkus-mobile-app-setup",
     question: "Linkus Mobile App Setup Instructions",
     answer: (
       <div>
@@ -216,9 +233,25 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         start using.
       </div>
     ),
+    searchText:
+      "Linkus mobile app setup install Yeastar VoIP iPhone Android QR code extension PBX softphone push notifications call transfer voicemail",
+    keywords: [
+      "linkus",
+      "yeastar",
+      "mobile app",
+      "voip app",
+      "softphone",
+      "iphone",
+      "android",
+      "qr code",
+      "extension",
+      "install",
+      "setup",
+    ],
   },
 
   {
+    slug: "scan-to-network-remove-user",
     question: "Scan To Network - Remove A User",
     answer: (
       <div>
@@ -280,8 +313,21 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         changes.
       </div>
     ),
+    searchText:
+      "Scan to Network remove user delete profile printer IP address Apps Network Folder Configure Save Lexmark printer panel browser",
+    keywords: [
+      "scan to network",
+      "remove user",
+      "delete user",
+      "printer",
+      "lexmark",
+      "network folder",
+      "scan center",
+      "scan profile",
+    ],
   },
   {
+    slug: "bsd-printer-model-equivalents",
     question: "Standard Model Equivalent for BSD Printers",
     answer: (
       <table className="w-full border-collapse max-w-[800px]">
@@ -481,8 +527,28 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         </tbody>
       </table>
     ),
+    searchText:
+      "Standard model equivalent BSD printer Lexmark Enterprise CX CS MX MS XC XS XM color laser monochrome multifunction",
+    keywords: [
+      "bsd",
+      "printer model",
+      "model equivalent",
+      "lexmark",
+      "enterprise model",
+      "cx",
+      "cs",
+      "mx",
+      "ms",
+      "xc",
+      "xs",
+      "xm",
+      "color laser",
+      "monochrome laser",
+      "multifunction",
+    ],
   },
   {
+    slug: "check-setup-voicemail",
     question: "Check & Setup Voice Mail",
     answer: (
       <>
@@ -514,8 +580,22 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         .
       </>
     ),
+    searchText:
+      "Check setup voicemail dial *2 envelope button PIN password street address default password voicemail to email",
+    keywords: [
+      "voicemail",
+      "voice mail",
+      "vm",
+      "pin",
+      "password",
+      "envelope button",
+      "*2",
+      "voicemail to email",
+      "default password",
+    ],
   },
   {
+    slug: "tools",
     question: "Tools",
     answer: (
       <>
@@ -541,8 +621,22 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         <br />
       </>
     ),
+    searchText:
+      "Tools whatsmydns dns lookup security trails gtmetrix website performance speed test dns propagation",
+    keywords: [
+      "tools",
+      "dns",
+      "whatsmydns",
+      "security trails",
+      "gtmetrix",
+      "performance",
+      "speed test",
+      "diagnostic",
+      "dns lookup",
+    ],
   },
   {
+    slug: "lexmark-print-black-and-white",
     question: "Set your Lexmark Color Printer to print in Black & White",
     answer: (
       <>
@@ -588,8 +682,23 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         <span className="font-bold">OK</span> button.
       </>
     ),
+    searchText:
+      "Set Lexmark color printer print Black and White grayscale Devices and Printers Printer Properties Preferences Quality print text as black",
+    keywords: [
+      "lexmark",
+      "color printer",
+      "black and white",
+      "b&w",
+      "grayscale",
+      "print text as black",
+      "printer properties",
+      "preferences",
+      "quality tab",
+      "monochrome",
+    ],
   },
   {
+    slug: "voicemail-greeting-recordings",
     question: "To Change/Update your Voicemail Greeting Recordings",
     answer: (
       <>
@@ -634,8 +743,22 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         </a>
       </>
     ),
+    searchText:
+      "Change update voicemail greeting recordings unavailable busy temporary message record name PIN mailbox options",
+    keywords: [
+      "voicemail greeting",
+      "greeting",
+      "record voicemail",
+      "unavailable message",
+      "busy message",
+      "temporary message",
+      "mailbox options",
+      "record name",
+      "voicemail recording",
+    ],
   },
   {
+    slug: "fd360-social-accounts",
     question: "FD360 Social Networking Accounts",
     answer: (
       <>
@@ -671,8 +794,20 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         <br />
       </>
     ),
+    searchText:
+      "FD360 social networking accounts Twitter Facebook LinkedIn Future Digital US",
+    keywords: [
+      "social",
+      "social media",
+      "twitter",
+      "facebook",
+      "linkedin",
+      "follow us",
+      "social accounts",
+    ],
   },
   {
+    slug: "office-365-resources",
     question: "Office 365 Resources",
     answer: (
       <>
@@ -844,8 +979,27 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         </a>
       </>
     ),
+    searchText:
+      "Office 365 resources security compromised account hacked inbox rules best practices security roadmap MFA multi-factor authentication app password attack simulator phishing spam",
+    keywords: [
+      "office 365",
+      "o365",
+      "microsoft 365",
+      "email security",
+      "compromised account",
+      "hacked",
+      "phishing",
+      "spam",
+      "inbox rules",
+      "mfa",
+      "multi-factor authentication",
+      "app password",
+      "attack simulator",
+      "outlook",
+    ],
   },
   {
+    slug: "check-cdr-voice-recordings",
     question: "How to check Call Data Records (CDRs) and Voice Recordings?",
     answer: (
       <>
@@ -878,5 +1032,19 @@ export const frequentlyAskData: FrequentlyAskData[] = [
         </span>
       </>
     ),
+    searchText:
+      "Check Call Data Records CDR voice recordings PBX login time date range fuzzy search number Cloud PBX S-series Yeastar",
+    keywords: [
+      "cdr",
+      "call data records",
+      "voice recordings",
+      "call recordings",
+      "pbx",
+      "cloud pbx",
+      "s-series",
+      "yeastar",
+      "call history",
+      "fuzzy search",
+    ],
   },
 ];

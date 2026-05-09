@@ -155,8 +155,8 @@ const Footer = () => {
               />
               <span className="flex flex-col">
                 Customer Service:
-                <Link className="text-brand-green" href="tel:8555533360">
-                  855.55-FD360 (3.3360)
+                <Link className="text-brand-green" href="tel:4808096328">
+                  (480) 809-6328
                 </Link>
               </span>
             </Text>
@@ -164,8 +164,8 @@ const Footer = () => {
               <Image src={phone} alt="phone" className="w-[22px] h-auto " />
               <span className="flex gap-2">
                 Tech Support:
-                <Link className="text-brand-green" href="tel:4808096328">
-                  480.809.6328
+                <Link className="text-brand-green" href="tel:4808096334">
+                  (480) 809-6334
                 </Link>
               </span>
             </Text>
@@ -173,9 +173,9 @@ const Footer = () => {
               <Image src={email} alt="email" className="w-[22px] h-auto" />
               <Link
                 className="text-brand-green max-2xl:break-all"
-                href="mailto:customercare@futuredigital360.com"
+                href="mailto:support@futuredigital360.com"
               >
-                customercare@futuredigital360.com
+                support@futuredigital360.com
               </Link>
             </Text>
           </div>

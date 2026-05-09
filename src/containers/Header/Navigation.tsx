@@ -1,17 +1,45 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "motion/react";
 import { cx } from "../../lib/utils";
+import SearchBar from "@/components/SearchBar";
 import NavigationMobile from "./NavigationMobile";
-import { NavigationType } from "./navigation";
-import { navigation } from "./navigation";
+import { navigation, NavigationType } from "./navigationData";
 
 const Navigation = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchPanelRef = useRef<HTMLDivElement | null>(null);
+  const searchButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  // Close the search panel on Escape or when clicking outside it.
+  useEffect(() => {
+    if (!searchOpen) return;
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSearchOpen(false);
+    };
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (
+        searchPanelRef.current?.contains(target) ||
+        searchButtonRef.current?.contains(target)
+      ) {
+        return;
+      }
+      setSearchOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    window.addEventListener("mousedown", handleClick);
+    return () => {
+      window.removeEventListener("keydown", handleKey);
+      window.removeEventListener("mousedown", handleClick);
+    };
+  }, [searchOpen]);
 
   useEffect(() => {
     if (open) {
@@ -60,6 +88,7 @@ const Navigation = () => {
 
   useEffect(() => {
     setOpen(false);
+    setSearchOpen(false);
   }, [pathname]);
 
   const handleMenuClick = () => {
@@ -82,7 +111,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav>
+    <nav className="relative">
       <ul className="items-center gap-4 xl:gap-6 text-white uppercase font-semibold hidden lg:flex">
         {navigation.map((item) => (
           <li
@@ -164,7 +193,56 @@ const Navigation = () => {
             )}
           </li>
         ))}
+
+        <li>
+          <button
+            ref={searchButtonRef}
+            type="button"
+            onClick={() => setSearchOpen((prev) => !prev)}
+            aria-label={searchOpen ? "Close search" : "Open search"}
+            aria-expanded={searchOpen}
+            aria-controls="header-search-panel"
+            className={cx(
+              "flex items-center justify-center w-9 h-9 rounded-full transition-colors duration-300 cursor-pointer hover:text-sky-300",
+              searchOpen && "text-sky-200 bg-white/10"
+            )}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-5 h-5"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m21 21-4.35-4.35m1.85-5.4a7.25 7.25 0 1 1-14.5 0 7.25 7.25 0 0 1 14.5 0Z"
+              />
+            </svg>
+          </button>
+        </li>
       </ul>
+
+      <AnimatePresence>
+        {searchOpen && (
+          <motion.div
+            id="header-search-panel"
+            ref={searchPanelRef}
+            initial={{ y: -8, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -8, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="hidden lg:block absolute top-full right-0 mt-3 w-[420px] max-w-[calc(100vw-2rem)] z-40"
+            role="dialog"
+            aria-label="Site search"
+          >
+            <SearchBar autoFocus placeholder="Search FAQs, services, guides…" />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="lg:hidden">
         <NavigationMobile open={open} />
       </div>

@@ -1,0 +1,381 @@
+import type { SearchEntry } from "./types";
+
+/**
+ * Static search entries for every public route on the site (FAQ items are
+ * indexed separately in `faqIndex.ts`).
+ *
+ * Keep `keywords` rich and varied — they are the single biggest lever for
+ * making fuzzy search find the right page when the user types something that
+ * doesn't appear verbatim in `title`/`description`.
+ */
+export const siteIndex: SearchEntry[] = [
+  {
+    id: "page-home",
+    title: "Home",
+    description:
+      "Future Digital 360 — complete digital solutions for telephone, IT, web, security, and office equipment since 1986.",
+    keywords: [
+      "home",
+      "landing",
+      "future digital 360",
+      "fd360",
+      "overview",
+      "scottsdale",
+      "phoenix",
+      "arizona",
+    ],
+    href: "/",
+    category: "Page",
+  },
+
+  {
+    id: "service-overview",
+    title: "Our Services",
+    description:
+      "Overview of all Future Digital 360 service offerings — communication, network, web, cybersecurity, and multi-functional products.",
+    keywords: ["services", "offerings", "solutions", "what we do"],
+    href: "/services",
+    category: "Service",
+  },
+  {
+    id: "service-communication",
+    title: "Communication Services",
+    description:
+      "VoIP phone systems, cloud PBX, voicemail, call routing, and unified communications for businesses.",
+    keywords: [
+      "voip",
+      "phone",
+      "phone system",
+      "telephone",
+      "pbx",
+      "cloud pbx",
+      "voicemail",
+      "yeastar",
+      "linkus",
+      "call",
+      "extension",
+      "communication",
+      "telephony",
+      "sip",
+    ],
+    href: "/services/communication",
+    category: "Service",
+  },
+  {
+    id: "service-network",
+    title: "Manage IT Network Services",
+    description:
+      "Managed IT services, network monitoring, infrastructure management, and on-going technical support.",
+    keywords: [
+      "it",
+      "managed it",
+      "network",
+      "infrastructure",
+      "server",
+      "support",
+      "msp",
+      "monitoring",
+      "helpdesk",
+      "technical support",
+    ],
+    href: "/services/network",
+    category: "Service",
+  },
+  {
+    id: "service-web",
+    title: "Web Services",
+    description:
+      "Web design, development, hosting, and ongoing maintenance for modern business websites.",
+    keywords: [
+      "web",
+      "website",
+      "web design",
+      "web development",
+      "hosting",
+      "domain",
+      "wordpress",
+      "seo",
+      "landing page",
+      "ecommerce",
+    ],
+    href: "/services/web",
+    category: "Service",
+  },
+  {
+    id: "service-web-templates",
+    title: "Website Templates",
+    description:
+      "Browse pre-built website templates available through Future Digital 360 web services.",
+    keywords: [
+      "templates",
+      "website templates",
+      "themes",
+      "designs",
+      "examples",
+      "samples",
+    ],
+    href: "/services/web/templates",
+    category: "Service",
+  },
+  {
+    id: "service-cybersecurity",
+    title: "Cyber & Network Security Services",
+    description:
+      "Cybersecurity assessments, network security, threat protection, and compliance solutions.",
+    keywords: [
+      "cybersecurity",
+      "cyber security",
+      "security",
+      "firewall",
+      "antivirus",
+      "compliance",
+      "phishing",
+      "ransomware",
+      "threat",
+      "network security",
+      "endpoint",
+      "mfa",
+      "office 365 security",
+    ],
+    href: "/services/cybersecurity",
+    category: "Service",
+  },
+  {
+    id: "service-multi-functional",
+    title: "Multi Function Product Services",
+    description:
+      "Lexmark printers, copiers, scanners, and multi-functional office equipment with full service support.",
+    keywords: [
+      "printer",
+      "printers",
+      "copier",
+      "scanner",
+      "lexmark",
+      "mfp",
+      "multi functional",
+      "office equipment",
+      "scan to network",
+      "print",
+      "toner",
+    ],
+    href: "/services/multi-functional",
+    category: "Service",
+  },
+
+  {
+    id: "support-overview",
+    title: "Support",
+    description:
+      "Customer support hub — FAQs, PDF guides, iFax instructions, and Linkus client downloads.",
+    keywords: ["support", "help", "customer service", "assistance"],
+    href: "/support",
+    category: "Support",
+  },
+  {
+    id: "support-faq",
+    title: "Frequently Asked Questions",
+    description:
+      "Answers to the most common questions about VoIP, voicemail, mobile apps, printer setup, and more.",
+    keywords: [
+      "faq",
+      "frequently asked",
+      "questions",
+      "help",
+      "how to",
+      "voicemail",
+      "linkus",
+      "printer",
+      "scan to network",
+    ],
+    href: "/support/faq",
+    category: "Support",
+  },
+  {
+    id: "support-guides",
+    title: "PDF Guides",
+    description:
+      "Downloadable PDF guides covering printer setup, phone configuration, software installs, and more.",
+    keywords: [
+      "guides",
+      "pdf",
+      "manuals",
+      "documentation",
+      "instructions",
+      "how to",
+      "downloads",
+    ],
+    href: "/support/guides",
+    category: "Support",
+  },
+  {
+    id: "support-ifax",
+    title: "iFax FAQs",
+    description:
+      "Setup, sending, receiving, and account management answers for the iFax internet fax service.",
+    keywords: [
+      "ifax",
+      "i-fax",
+      "internet fax",
+      "fax",
+      "online fax",
+      "send fax",
+      "receive fax",
+      "fax account",
+    ],
+    href: "/support/ifax",
+    category: "Support",
+  },
+  {
+    id: "support-linkus",
+    title: "Linkus Client",
+    description:
+      "Install and configure the Yeastar Linkus desktop and mobile clients for your VoIP extension.",
+    keywords: [
+      "linkus",
+      "yeastar",
+      "linkus client",
+      "softphone",
+      "mobile app",
+      "desktop app",
+      "voip app",
+      "extension app",
+    ],
+    href: "/support/linkus-client",
+    category: "Support",
+  },
+
+  {
+    id: "company-about",
+    title: "About Us",
+    description:
+      "Learn about Future Digital 360 — our story, our team, and our commitment to clients since 1986.",
+    keywords: ["about", "company", "history", "story", "who we are"],
+    href: "/about-us",
+    category: "Company",
+  },
+  {
+    id: "company-overview",
+    title: "Company Overview",
+    description:
+      "Future Digital 360 company overview, mission, vision, and core values.",
+    keywords: [
+      "company overview",
+      "mission",
+      "vision",
+      "values",
+      "history",
+      "about",
+    ],
+    href: "/about-us/company-overview",
+    category: "Company",
+  },
+  {
+    id: "company-leaders",
+    title: "Meet Our Leaders",
+    description:
+      "Meet the leadership team at Future Digital 360 — backgrounds, expertise, and how to reach them.",
+    keywords: [
+      "leaders",
+      "leadership",
+      "team",
+      "executives",
+      "management",
+      "ceo",
+      "founders",
+    ],
+    href: "/about-us/meet-out-leaders",
+    category: "Company",
+  },
+  {
+    id: "company-partners",
+    title: "Our Partners",
+    description:
+      "Strategic technology partners that power Future Digital 360 service offerings.",
+    keywords: [
+      "partners",
+      "vendors",
+      "alliances",
+      "technology partners",
+      "lexmark",
+      "yeastar",
+      "microsoft",
+    ],
+    href: "/partners",
+    category: "Company",
+  },
+  {
+    id: "page-contact",
+    title: "Contact Us",
+    description:
+      "Get in touch with the Future Digital 360 team — phone, email, address, and contact form.",
+    keywords: [
+      "contact",
+      "contact us",
+      "phone number",
+      "email",
+      "address",
+      "office",
+      "reach us",
+      "get in touch",
+      "support email",
+    ],
+    href: "/contact-us",
+    category: "Page",
+  },
+  {
+    id: "page-translation",
+    title: "Translation App",
+    description:
+      "Real-time translation app for multilingual business communication.",
+    keywords: [
+      "translation",
+      "translator",
+      "language",
+      "multilingual",
+      "translate",
+      "translation app",
+    ],
+    href: "/translation-app",
+    category: "Page",
+  },
+
+  {
+    id: "page-privacy",
+    title: "Privacy Policy",
+    description:
+      "How Future Digital 360 collects, uses, and protects your information.",
+    keywords: ["privacy", "privacy policy", "data", "gdpr", "cookies"],
+    href: "/privacy-policy",
+    category: "Page",
+  },
+  {
+    id: "page-terms-of-service",
+    title: "Terms of Service",
+    description: "Terms governing your use of Future Digital 360 services.",
+    keywords: ["terms", "terms of service", "tos", "agreement", "legal"],
+    href: "/terms-of-service",
+    category: "Page",
+  },
+  {
+    id: "page-terms-and-conditions",
+    title: "Terms and Conditions",
+    description:
+      "General terms and conditions for engaging with Future Digital 360.",
+    keywords: ["terms and conditions", "t&c", "terms", "conditions", "legal"],
+    href: "/terms-and-conditions",
+    category: "Page",
+  },
+  {
+    id: "page-pricing-terms",
+    title: "Pricing Terms & Conditions",
+    description: "Terms and conditions specific to Future Digital 360 pricing.",
+    keywords: [
+      "pricing terms",
+      "billing",
+      "payment terms",
+      "pricing conditions",
+    ],
+    href: "/pricing/terms-condition",
+    category: "Page",
+  },
+];

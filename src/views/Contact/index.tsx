@@ -43,14 +43,14 @@ const ContactUs = () => {
               <Text className="font-semibold mt-5 mb-2">Let's Talk</Text>
               <Text className="mb-2">
                 <strong>Customer Service: </strong>
-                <a className="text-brand-600" href="tel:8555533360">
-                  855.55-FD360 (3.3360)
+                <a className="text-brand-600" href="tel:4808096328">
+                  (480) 809-6328
                 </a>
               </Text>
               <Text className="">
                 <strong>Tech Support: </strong>
-                <a className="text-brand-600" href="tel:4808096328">
-                  480.809.6328
+                <a className="text-brand-600" href="tel:4808096334">
+                  (480) 809-6334
                 </a>
               </Text>
             </div>
@@ -65,14 +65,14 @@ const ContactUs = () => {
                 />
               </div>
               <Text className="font-semibold mt-5 mb-2">Email Us</Text>
-              <Text className="mb-2">
+              {/* <Text className="mb-2">
                 <a
                   className="text-brand-600"
                   href="mailto:info@futuredigital360.com"
                 >
                   info@futuredigital360.com
                 </a>
-              </Text>
+              </Text> */}
               <Text className="">
                 <a
                   className="text-brand-600"
