@@ -14,6 +14,7 @@ import googlePartner from "./assets/partners/google.webp";
 import microsoft from "./assets/partners/mssoft.webp";
 import AnimateDiv from "@/components/AnimateDiv";
 import va360 from "./assets/partners/va360logo.png";
+import usamericom from "./assets/partners/usaamericom.webp";
 
 import "swiper/css";
 
@@ -51,6 +52,15 @@ const OurPartners = () => {
           <SwiperSlide className="!flex justify-between items-center !h-[134px]">
             <Link href="https://www.va360.us/" target="_blank">
               <Image className="w-full h-auto" src={va360} alt="VA360" />
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide className="!flex justify-between items-center !h-[134px]">
+            <Link href="" target="_blank">
+              <Image
+                className="w-full h-auto object-contain max-w-[240px]"
+                src={usamericom}
+                alt="usaamericom"
+              />
             </Link>
           </SwiperSlide>
           <SwiperSlide className="!flex justify-between items-center !h-[134px]">

@@ -10,6 +10,7 @@ import lexmark from "../Home/assets/partners/lexmark.webp";
 import googlePartner from "../Home/assets/partners/google.webp";
 import microsoft from "../Home/assets/partners/mssoft.webp";
 import va360 from "./assets/va360logo.png";
+import usamericom from "./assets/usaamericom.webp";
 
 import PageBanner from "@/containers/PageBanner";
 import banner from "./assets/partners-banner.webp";
@@ -56,7 +57,11 @@ const Partners = () => {
                 target="_blank"
                 className="w-full h-full flex items-center justify-center"
               >
-                <p className="text-[clamp(30px,4vw,80px)]">US Americom</p>
+                <Image
+                  src={usamericom}
+                  className="w-full h-auto max-w-[400px]"
+                  alt="usaamericom"
+                />
               </Link>
             </AnimateDiv>
           </div>
