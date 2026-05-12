@@ -37,7 +37,7 @@ const SearchBar = ({
       onSubmit={handleSubmit}
       className={cx(
         "w-full max-w-[720px] mx-auto flex items-stretch gap-2 rounded-full bg-white shadow-[0px_0px_8px_4px_rgba(0,0,0,0.08)] p-2 border border-gray-200",
-        className
+        className,
       )}
     >
       <label htmlFor="site-search" className="sr-only">
@@ -73,7 +73,7 @@ const SearchBar = ({
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder={placeholder}
-        className="flex-1 bg-transparent outline-none text-base text-gray-800 placeholder:text-gray-400 px-2"
+        className="flex-1 bg-transparent outline-none text-base text-gray-800 placeholder:text-gray-400 px-2 max-sm:max-w-[209px]"
       />
 
       <button
