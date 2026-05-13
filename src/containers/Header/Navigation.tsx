@@ -111,7 +111,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="relative -left-10 2xl:-left-0">
+    <nav className="relative left-0 lg:-left-10 2xl:-left-0">
       <ul className="items-center gap-4 xl:gap-6 text-white uppercase font-semibold hidden lg:flex">
         {navigation.map((item) => (
           <li
