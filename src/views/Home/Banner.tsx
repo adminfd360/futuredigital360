@@ -29,10 +29,10 @@ const Banner = () => {
       <Section className="relative z-10 !pt-20 lg:!pt-48">
         <AnimateDiv>
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-[120px] xl:px-0">
-            <div className="flex flex-col gap-6 lg:gap-10 text-white order-2 lg:order-1">
+            <div className="flex flex-col gap-6 lg:gap-10 text-white order-2 lg:order-1 max-[1368px]:pl-[90px]">
               <Text
                 as={"h1"}
-                className="font-bold text-2xl lg:text-5xl leading-[40px] lg:leading-[70px]"
+                className="font-bold text-2xl lg:text-4xl 2xl:text-5xl leading-[40px] lg:leading-[70px]"
               >
                 Complete Digital Solutions <br />
                 Total Peace of Mind
@@ -74,7 +74,7 @@ const Banner = () => {
               />
               <Image
                 src={logo}
-                className="absolute bottom-[201px] right-[71px] w-[65px] h-auto drop-shadow-xl [transform:perspective(998px)_rotateY(-43deg)_rotateX(16deg)_rotateZ(-4.5deg)_skewX(-4deg)] [transform-origin:center]"
+                className="absolute bottom-[183px] 2xl:bottom-[201px] right-[62px] 2xl:right-[71px] w-[65px] h-auto drop-shadow-xl [transform:perspective(998px)_rotateY(-43deg)_rotateX(16deg)_rotateZ(-4.5deg)_skewX(-4deg)] [transform-origin:center]"
                 alt="logo"
               />
             </div>

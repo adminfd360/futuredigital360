@@ -111,7 +111,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="relative">
+    <nav className="relative -left-10 2xl:-left-0">
       <ul className="items-center gap-4 xl:gap-6 text-white uppercase font-semibold hidden lg:flex">
         {navigation.map((item) => (
           <li
@@ -204,7 +204,7 @@ const Navigation = () => {
             aria-controls="header-search-panel"
             className={cx(
               "flex items-center justify-center w-9 h-9 rounded-full transition-colors duration-300 cursor-pointer hover:text-sky-300",
-              searchOpen && "text-sky-200 bg-white/10"
+              searchOpen && "text-sky-200 bg-white/10",
             )}
           >
             <svg
@@ -254,20 +254,20 @@ const Navigation = () => {
           className={cx(
             "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 -translate-y-2.5 bg-white",
             open &&
-              "[transform:translatex(3.5px)_rotate(-135deg)] w-[28px] -bottom-[20px]"
+              "[transform:translatex(3.5px)_rotate(-135deg)] w-[28px] -bottom-[20px]",
           )}
         ></div>
         <div
           className={cx(
             "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 bg-white",
-            open && "scale-0"
+            open && "scale-0",
           )}
         ></div>
         <div
           className={cx(
             "absolute h-[2px] w-full top-0 bottom-0 left-0 m-auto transition-all duration-300 translate-y-2.5 bg-white",
             open &&
-              "[transform:translatex(3.5px)_rotate(135deg)] w-[28px] bottom-[20px]"
+              "[transform:translatex(3.5px)_rotate(135deg)] w-[28px] bottom-[20px]",
           )}
         ></div>
       </div>
