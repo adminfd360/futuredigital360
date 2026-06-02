@@ -20,9 +20,9 @@ const Banner = () => {
         <a href="https://webservices.futuredigital360.com/" target="_blank">
           <Ribbon text="Web Service Bill Pay" />
         </a>
-        <a href="https://futuredigital360.billcenter.net/" target="_blank">
+        {/* <a href="https://futuredigital360.billcenter.net/" target="_blank">
           <Ribbon backgroundColor="#007D62" text="Customer Bill Pay" />
-        </a>
+        </a> */}
       </div>
 
       <ParticlesApp />
