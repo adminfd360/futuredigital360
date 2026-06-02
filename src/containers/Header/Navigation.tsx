@@ -204,31 +204,61 @@ const Navigation = () => {
                         }
                       >
                         {hasNested ? (
-                          <button
-                            type="button"
-                            className={`w-full flex items-center justify-between gap-2 px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
-                              subItem.subMenu?.some(
-                                (n) => pathname === n.href,
-                              ) || pathname === subItem.href
-                                ? "text-brand-500"
-                                : ""
-                            }`}
-                          >
-                            <span>{subItem.label}</span>
-                            <svg
-                              className="w-4 h-4"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
+                          subItem.href.startsWith("http") ? (
+                            <a
+                              href={subItem.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`w-full flex items-center justify-between gap-2 px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                                subItem.subMenu?.some(
+                                  (n) => pathname === n.href,
+                                ) || pathname === subItem.href
+                                  ? "text-brand-500"
+                                  : ""
+                              }`}
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </button>
+                              <span>{subItem.label}</span>
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </a>
+                          ) : (
+                            <Link
+                              href={subItem.href}
+                              className={`w-full flex items-center justify-between gap-2 px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                                subItem.subMenu?.some(
+                                  (n) => pathname === n.href,
+                                ) || pathname === subItem.href
+                                  ? "text-brand-500"
+                                  : ""
+                              }`}
+                            >
+                              <span>{subItem.label}</span>
+                              <svg
+                                className="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth={2}
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </Link>
+                          )
                         ) : subItem.href.startsWith("http") ? (
                           <a
                             href={subItem.href}
