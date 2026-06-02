@@ -69,17 +69,68 @@ const NavigationMobile = ({ open }: { open: boolean }) => {
             )}
             {hasSubMenu && (
               <ul className="flex flex-col gap-4 mt-3 bg-sky-50 rounded-lg p-4">
-                {subMenu?.map(({ label, href }, index) => (
-                  <li key={index}>
-                    <Link
-                      className={cx(
-                        "transition-colors duration-200",
-                        pathname === href && "text-brand-green font-bold"
+                {subMenu?.map((subItem, subIndex) => (
+                  <li key={subIndex}>
+                    {subItem.href.startsWith("http") ? (
+                      <a
+                        className={cx(
+                          "transition-colors duration-200",
+                          pathname === subItem.href &&
+                            "text-brand-green font-bold"
+                        )}
+                        href={subItem.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {subItem.label}
+                      </a>
+                    ) : (
+                      <Link
+                        className={cx(
+                          "transition-colors duration-200",
+                          pathname === subItem.href &&
+                            "text-brand-green font-bold"
+                        )}
+                        href={subItem.href}
+                      >
+                        {subItem.label}
+                      </Link>
+                    )}
+                    {subItem.hasSubMenu &&
+                      subItem.subMenu &&
+                      subItem.subMenu.length > 0 && (
+                        <ul className="flex flex-col gap-3 mt-3 ml-4 pl-3 border-l border-sky-200">
+                          {subItem.subMenu.map((nestedItem, nestedIndex) => (
+                            <li key={nestedIndex}>
+                              {nestedItem.href.startsWith("http") ? (
+                                <a
+                                  className={cx(
+                                    "text-sm transition-colors duration-200",
+                                    pathname === nestedItem.href &&
+                                      "text-brand-green font-bold"
+                                  )}
+                                  href={nestedItem.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {nestedItem.label}
+                                </a>
+                              ) : (
+                                <Link
+                                  className={cx(
+                                    "text-sm transition-colors duration-200",
+                                    pathname === nestedItem.href &&
+                                      "text-brand-green font-bold"
+                                  )}
+                                  href={nestedItem.href}
+                                >
+                                  {nestedItem.label}
+                                </Link>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
                       )}
-                      href={href}
-                    >
-                      {label}
-                    </Link>
                   </li>
                 ))}
               </ul>

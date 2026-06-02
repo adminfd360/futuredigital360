@@ -11,6 +11,7 @@ import { navigation, NavigationType } from "./navigationData";
 
 const Navigation = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -89,6 +90,8 @@ const Navigation = () => {
   useEffect(() => {
     setOpen(false);
     setSearchOpen(false);
+    setOpenDropdown(null);
+    setOpenSubDropdown(null);
   }, [pathname]);
 
   const handleMenuClick = () => {
@@ -118,7 +121,12 @@ const Navigation = () => {
             key={item.label}
             className={item.hasSubMenu ? "relative" : ""}
             onMouseEnter={() => item.hasSubMenu && setOpenDropdown(item.label)}
-            onMouseLeave={() => item.hasSubMenu && setOpenDropdown(null)}
+            onMouseLeave={() => {
+              if (item.hasSubMenu) {
+                setOpenDropdown(null);
+                setOpenSubDropdown(null);
+              }
+            }}
           >
             {item.hasSubMenu ? (
               <button
@@ -177,17 +185,118 @@ const Navigation = () => {
                 }`}
               >
                 <div className="py-2">
-                  {item.subMenu.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      href={subItem.href}
-                      className={`block px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
-                        pathname === subItem.href ? "text-brand-500" : ""
-                      }`}
-                    >
-                      {subItem.label}
-                    </Link>
-                  ))}
+                  {item.subMenu.map((subItem, subIndex) => {
+                    const subKey = `${item.label}-${subItem.label}`;
+                    const hasNested =
+                      subItem.hasSubMenu &&
+                      subItem.subMenu &&
+                      subItem.subMenu.length > 0;
+
+                    return (
+                      <div
+                        key={subIndex}
+                        className="relative"
+                        onMouseEnter={() =>
+                          hasNested && setOpenSubDropdown(subKey)
+                        }
+                        onMouseLeave={() =>
+                          hasNested && setOpenSubDropdown(null)
+                        }
+                      >
+                        {hasNested ? (
+                          <button
+                            type="button"
+                            className={`w-full flex items-center justify-between gap-2 px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                              subItem.subMenu?.some(
+                                (n) => pathname === n.href,
+                              ) || pathname === subItem.href
+                                ? "text-brand-500"
+                                : ""
+                            }`}
+                          >
+                            <span>{subItem.label}</span>
+                            <svg
+                              className="w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 5l7 7-7 7"
+                              />
+                            </svg>
+                          </button>
+                        ) : subItem.href.startsWith("http") ? (
+                          <a
+                            href={subItem.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`block px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                              pathname === subItem.href ? "text-brand-500" : ""
+                            }`}
+                          >
+                            {subItem.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={subItem.href}
+                            className={`block px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                              pathname === subItem.href ? "text-brand-500" : ""
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        )}
+
+                        {/* Nested flyout submenu */}
+                        {hasNested && (
+                          <div
+                            className={`absolute top-0 left-full ml-1 w-52 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-200 ${
+                              openSubDropdown === subKey
+                                ? "opacity-100 visible translate-x-0"
+                                : "opacity-0 invisible -translate-x-2"
+                            }`}
+                          >
+                            <div className="py-2">
+                              {subItem.subMenu?.map(
+                                (nestedItem, nestedIndex) =>
+                                  nestedItem.href.startsWith("http") ? (
+                                    <a
+                                      key={nestedIndex}
+                                      href={nestedItem.href}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className={`block px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                                        pathname === nestedItem.href
+                                          ? "text-brand-500"
+                                          : ""
+                                      }`}
+                                    >
+                                      {nestedItem.label}
+                                    </a>
+                                  ) : (
+                                    <Link
+                                      key={nestedIndex}
+                                      href={nestedItem.href}
+                                      className={`block px-4 py-3 text-black hover:bg-gray-50 transition-colors duration-150 text-sm font-medium normal-case hover:text-brand-500 ${
+                                        pathname === nestedItem.href
+                                          ? "text-brand-500"
+                                          : ""
+                                      }`}
+                                    >
+                                      {nestedItem.label}
+                                    </Link>
+                                  ),
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}

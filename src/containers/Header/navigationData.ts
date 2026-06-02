@@ -30,7 +30,19 @@ export const navigation: NavigationType[] = [
       {
         label: "Web Services",
         href: "/services/web",
-        hasSubMenu: false,
+        hasSubMenu: true,
+        subMenu: [
+          {
+            label: "Login to Web Services",
+            href: "https://webservices.futuredigital360.com",
+            hasSubMenu: false,
+          },
+          {
+            label: "Web Templates",
+            href: "/services/web/templates",
+            hasSubMenu: false,
+          },
+        ],
       },
 
       {
