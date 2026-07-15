@@ -28,6 +28,12 @@ export const navigation: NavigationType[] = [
       },
 
       {
+        label: "Block of Time (BOT)",
+        href: "/services/block-of-time",
+        hasSubMenu: false,
+      },
+
+      {
         label: "Web Services",
         href: "/services/web",
         hasSubMenu: true,

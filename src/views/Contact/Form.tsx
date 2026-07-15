@@ -199,6 +199,7 @@ const Form = () => {
                 <option value="communication">Communication Services</option>
                 <option value="cybersecurity">Cyber Security</option>
                 <option value="network">Network Services</option>
+                <option value="block-of-time">Block of Time (BOT)</option>
                 <option value="web">Web Services</option>
                 <option value="other">Other</option>
               </select>
