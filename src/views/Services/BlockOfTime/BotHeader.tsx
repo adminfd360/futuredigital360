@@ -5,12 +5,16 @@ import Image from "next/image";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { useState } from "react";
 import { cx } from "@/lib/utils";
-import logo from "@/containers/Footer/assets/logo-colored.png";
+import logo from "@/containers/Header/assets/Logo.png";
 import Bolt from "./Bolt";
 
 /**
  * Minimal standalone header for this page — logo left, single action right.
  * Hides on scroll down, returns on scroll up.
+ *
+ * Transparent over the dark hero photo so it reads as one image. The white
+ * logo and white label would disappear against the light sections further
+ * down, so scrolling swaps in a dark backdrop rather than a light one.
  */
 const BotHeader = () => {
   const { scrollY } = useScroll();
@@ -29,7 +33,7 @@ const BotHeader = () => {
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
       className={cx(
         "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
-        scrolled && "bg-white/80 backdrop-blur-md"
+        scrolled && "bg-black/70 backdrop-blur-md"
       )}
     >
       <div className="flex items-center justify-between px-5 lg:px-10 py-4">
@@ -44,7 +48,7 @@ const BotHeader = () => {
 
         <Link
           href="/contact-us"
-          className="group flex items-center gap-2 text-black font-bold text-[13px] lg:text-[15px] uppercase tracking-tight"
+          className="group flex items-center gap-2 text-white font-bold text-[13px] lg:text-[15px] uppercase tracking-tight"
         >
           <Bolt className="w-4 h-4 text-brand-500 transition-transform duration-300 group-hover:scale-125" />
           <span className="relative">

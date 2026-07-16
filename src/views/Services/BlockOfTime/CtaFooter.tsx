@@ -14,11 +14,11 @@ const CtaFooter = () => {
       <Aurora variant="dark" className="-z-10 opacity-70" />
 
       <Reveal>
-        <Link href="/contact-us" className="group block">
-          <span className="block bg-gradient-to-r from-white via-white to-white bg-clip-text font-black uppercase leading-[0.85] tracking-[-0.04em] text-transparent text-[clamp(3.5rem,15vw,15rem)] transition-[background-image] duration-500 group-hover:from-[#38bdf8] group-hover:via-[#0084e9] group-hover:to-[#7c5cff]">
+        <Link href="/contact-us" className="group block text-center">
+          <span className="block bg-gradient-to-r from-white via-white to-white bg-clip-text font-black uppercase leading-[0.9] tracking-[-0.03em] text-transparent text-[clamp(2.75rem,9vw,8rem)] transition-[background-image] duration-500 group-hover:from-[#38bdf8] group-hover:via-[#0084e9] group-hover:to-[#7c5cff]">
             Let&apos;s talk
           </span>
-          <span className="mt-8 inline-flex items-center gap-3 text-[14px] lg:text-[18px] font-bold uppercase tracking-tight text-white">
+          <span className="mt-6 inline-flex items-center gap-3 text-[13px] lg:text-[16px] font-bold uppercase tracking-tight text-white">
             <Bolt className="w-5 h-5 text-brand-500" />
             Get started
             <motion.span

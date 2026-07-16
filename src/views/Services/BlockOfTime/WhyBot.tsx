@@ -20,14 +20,14 @@ const WhyBot = () => {
       <Aurora variant="dark" className="-z-10" />
 
       <Reveal>
-        <p className="flex items-center gap-2 text-[12px] lg:text-[14px] font-bold uppercase tracking-[0.2em] text-white/50">
+        <p className="flex items-center justify-center gap-2 text-[12px] lg:text-[14px] font-bold uppercase tracking-[0.2em] text-white/50">
           <Bolt className="w-4 h-4 text-brand-500" />
           Why BOT
         </p>
       </Reveal>
 
       <Reveal delay={0.1}>
-        <h2 className="mt-8 font-black uppercase leading-[0.85] tracking-[-0.04em] text-white text-[clamp(3rem,11vw,11rem)]">
+        <h2 className="mt-8 text-center font-black uppercase leading-[0.9] tracking-[-0.03em] text-white text-[clamp(2.25rem,6vw,5rem)]">
           Why{" "}
           <span className="inline-block bg-gradient-to-r from-[#38bdf8] via-[#0084e9] to-[#7c5cff] bg-clip-text text-transparent">
             BOT?
@@ -35,7 +35,7 @@ const WhyBot = () => {
         </h2>
       </Reveal>
 
-      <ul className="mt-16 lg:mt-24">
+      <ul className="mx-auto mt-14 lg:mt-20 max-w-[1100px]">
         {reasons.map((reason, index) => (
           <motion.li
             key={reason}
@@ -47,12 +47,12 @@ const WhyBot = () => {
           >
             <motion.div
               variants={lineVariants(index)}
-              className="group flex items-baseline gap-4 lg:gap-8 border-b border-white/15 py-3 lg:py-5 transition-colors duration-300 hover:border-brand-500"
+              className="group flex items-baseline justify-center gap-3 lg:gap-5 border-b border-white/15 py-3 lg:py-4 transition-colors duration-300 hover:border-brand-500"
             >
-              <span className="font-mono text-[11px] lg:text-[13px] font-bold text-white/30 tabular-nums shrink-0">
+              <span className="font-mono text-[11px] lg:text-[12px] font-bold text-white/30 tabular-nums shrink-0">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="font-black uppercase leading-[1.02] tracking-[-0.035em] text-white text-[clamp(1.5rem,4.6vw,4.25rem)] transition-colors duration-300 group-hover:text-brand-500">
+              <span className="text-center font-black uppercase leading-[1.1] tracking-[-0.03em] text-white text-[clamp(1.15rem,2.8vw,2.25rem)] transition-colors duration-300 group-hover:text-brand-500">
                 {reason}
               </span>
             </motion.div>

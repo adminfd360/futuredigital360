@@ -23,13 +23,13 @@ const IncludedServices = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="flex items-center gap-2 text-[12px] lg:text-[14px] font-bold uppercase tracking-[0.2em] text-black/50"
+        className="flex items-center justify-center gap-2 text-[12px] lg:text-[14px] font-bold uppercase tracking-[0.2em] text-black/50"
       >
         <Bolt className="w-4 h-4 text-brand-500" />
         Included Services
       </motion.p>
 
-      <ul className="mt-10 lg:mt-14">
+      <ul className="mx-auto mt-10 lg:mt-14 max-w-[1100px]">
         {services.map((service, index) => (
           // The clip lives on the <li>, which never transforms — so the
           // viewport observer measures it correctly. The inner line inherits
@@ -44,12 +44,12 @@ const IncludedServices = () => {
           >
             <motion.div
               variants={lineVariants(index)}
-              className="group flex items-baseline gap-4 lg:gap-8 border-b border-black/10 py-2 lg:py-3"
+              className="group flex items-baseline justify-center gap-3 lg:gap-5 border-b border-black/10 py-3 lg:py-4"
             >
-              <span className="font-mono text-[11px] lg:text-[13px] font-bold text-black/30 tabular-nums shrink-0">
+              <span className="font-mono text-[11px] lg:text-[12px] font-bold text-black/30 tabular-nums shrink-0">
                 {String(index + 1).padStart(2, "0")}
               </span>
-              <span className="font-black uppercase leading-[1.02] tracking-[-0.035em] text-black text-[clamp(1.75rem,5.2vw,4.75rem)] transition-colors duration-300 group-hover:text-brand-500">
+              <span className="text-center font-black uppercase leading-[1.1] tracking-[-0.03em] text-black text-[clamp(1.15rem,3vw,2.5rem)] transition-colors duration-300 group-hover:text-brand-500">
                 {service}
               </span>
             </motion.div>

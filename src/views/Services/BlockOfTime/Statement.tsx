@@ -23,7 +23,7 @@ const Statement = () => {
     <section className="bg-gradient-to-b from-white via-[#f4f8ff] to-white px-5 lg:px-10 py-24 lg:py-40">
       <p
         ref={ref}
-        className="flex flex-wrap max-w-[1200px] text-[26px] lg:text-[54px] font-bold leading-[1.25] tracking-tight"
+        className="mx-auto flex flex-wrap justify-center max-w-[950px] text-center text-[19px] lg:text-[32px] font-bold leading-[1.35] tracking-tight"
       >
         {WORDS.map((word, index) => {
           const start = index / WORDS.length;

@@ -26,8 +26,8 @@ const TICKER = [
 const BlockOfTime = () => {
   return (
     // overflow-x-clip, not -hidden: `hidden` forces overflow-y to compute as
-    // `auto`, which makes this a scroll container and breaks position:sticky
-    // in Pricing and HowItWorks. `clip` contains the same overflow without it.
+    // `auto`, which makes this a scroll container and breaks the pinned
+    // position:sticky in Pricing. `clip` contains the same overflow without it.
     <div className="bg-white font-[family-name:var(--font-inter)] overflow-x-clip">
       <SmoothScroll />
       <BotHeader />
