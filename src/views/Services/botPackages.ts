@@ -14,6 +14,7 @@ export type BotPackage = {
 export const botPackages: BotPackage[] = [
   { name: "BOT 10", hours: 10, price: 1350 },
   { name: "BOT 20", hours: 20, price: 2350 },
+  { name: "BOT 30", hours: 30, price: 3150 },
   { name: "BOT 40", hours: 40, price: 3950 },
 ];
 
