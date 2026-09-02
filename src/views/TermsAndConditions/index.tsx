@@ -67,7 +67,7 @@ const TermsAndConditions = () => {
       if (block._type !== "block") return null;
 
       return (
-        <p key={block._key} className="leading-7">
+        <p key={block._key} className="leading-7 mb-4">
           {block.children.map((child) => {
             if (child.marks?.includes("strong")) {
               return <strong key={child._key}>{child.text}</strong>;
