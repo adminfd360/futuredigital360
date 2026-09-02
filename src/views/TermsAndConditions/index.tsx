@@ -67,12 +67,19 @@ const TermsAndConditions = () => {
       if (block._type !== "block") return null;
 
       return (
-        <p key={block._key} className="leading-7 mb-4">
+        <p key={block._key} className="leading-7">
           {block.children.map((child) => {
             if (child.marks?.includes("strong")) {
               return <strong key={child._key}>{child.text}</strong>;
             }
-            return <span key={child._key}>{child.text}</span>;
+            return (
+              <span
+                key={child._key}
+                className={child.text ? undefined : "pb-4 block"}
+              >
+                {child.text}
+              </span>
+            );
           })}
         </p>
       );
